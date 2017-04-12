@@ -24,7 +24,7 @@
   }
 
   .nav a {
-    color: white;
+    color: $brand-primary;
 
     &:hover, &:focus {
       background: rgba($gray-darker, 0.4);
