@@ -36,7 +36,7 @@ end
 
 group :production do
   # capistrano
-  gem "capistrano", "~> 3.7"
+  gem "capistrano", "3.7.2"
   gem 'capistrano-rbenv', '~> 2.0'
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
