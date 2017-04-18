@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 ruby '2.3.1'
 
 gem 'rails', '5.0.2'
-gem 'puma'
 gem 'pg'
+gem 'unicorn'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'redis'
@@ -26,11 +26,21 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
 
+  gem 'puma'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
   gem 'listen', '~> 3.0.5'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :production do
+  # capistrano
+  gem "capistrano", "~> 3.7"
+  gem 'capistrano-rbenv', '~> 2.0'
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-unicorn',   require: false
 end
 
 
