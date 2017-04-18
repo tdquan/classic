@@ -19,7 +19,7 @@ test: &TEST
 production:
   adapter: postgresql
   encoding: utf8
-  database: classic_prod
+  database: classic_production
   pool: 5
   # username: classic
   # password: <%= ENV['shootme_database_password'] %>
