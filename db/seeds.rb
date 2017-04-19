@@ -34,3 +34,4 @@ c = Spree::Product.create!(name: "Teren Alchemia" , price: 100, shipping_categor
 c.taxons = [books_taxon, artists_taxon]
 d = Spree::Product.create!(name: "The greatest shitty?" , price: 100, shipping_category_id: 1, available_on: Time.now)
 d.taxons = [books_taxon, artists_taxon, projects_taxon]
+
