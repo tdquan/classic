@@ -22,6 +22,10 @@ gem 'spree', '~> 3.2.0'
 gem 'spree_auth_devise', '~> 3.2.0.beta'
 gem 'spree_gateway', '~> 3.2.0.beta'
 
+## text editor
+gem 'spree_editor', github: 'spree-contrib/spree_editor'
+
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
