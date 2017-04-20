@@ -27,13 +27,10 @@
               <%= small_image(product, itemprop: "image") %><br/>
               <div class="overlay"></div>
               <div class="panel-body text-center product-body">
-                  <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
-                  <br/>
-                  <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                    <span class="price selling lead" itemprop="price"><%= display_price(product) %></span>
-                  </span>
-                <% end %>
+                <%= small_image(product, itemprop: "image") %><br/>
+                <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
               </div>
+            <% end %>
           </div>
         <% end %>
       </div>
