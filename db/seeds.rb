@@ -7,7 +7,6 @@ Spree::Taxonomy.destroy_all
 Spree::Core::Engine.load_seed if defined?(Spree::Core)
 Spree::Auth::Engine.load_seed if defined?(Spree::Auth)
 
-
 ## option 1
 # category_taxonomy = Spree::Taxonomy.create!(name: 'Categorie')
 # book_taxon = Spree::Taxon.last
