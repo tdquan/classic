@@ -413,7 +413,7 @@ DEPENDENCIES
   redis
   sass-rails
   simple_form
-  spree (~> 3.2.0)
+  spree (~> 3.2.1)
   spree_auth_devise (~> 3.2.0.beta)
   spree_editor!
   spree_gateway (~> 3.2.0.beta)
