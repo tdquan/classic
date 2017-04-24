@@ -25,6 +25,9 @@ gem 'spree_gateway', '~> 3.2.0.beta'
 ## text editor
 gem 'spree_editor', github: 'spree-contrib/spree_editor'
 
+# Lazy loading
+gem 'lazyload-rails'
+
 
 group :development, :test do
   gem 'binding_of_caller'
