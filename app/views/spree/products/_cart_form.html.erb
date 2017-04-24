@@ -49,15 +49,22 @@
         </div>
 
         <% if @product.can_supply? %>
-          <div class="add-to-cart">
-            <br />
-            <div class="input-group">
-              <%= number_field_tag :quantity, 1, class: 'title form-control', min: 1 %>
-              <span class="input-group-btn">
-                <%= button_tag class: 'btn btn-success', id: 'add-to-cart-button', type: :submit do %>
-                  <%= Spree.t(:add_to_cart) %>
-                <% end %>
-              </span>
+          <div class="row">
+          <div class="col-md-10">
+            <div class="add-to-cart">
+              <br />
+              <div class="input-group">
+                <%= number_field_tag :quantity, 1, class: 'title form-control', min: 1 %>
+                <span class="input-group-btn">
+                  <%= button_tag class: 'btn btn-primary', id: 'add-to-cart-button', type: :submit do %>
+                    <%= Spree.t(:add_to_cart) %>
+                  <% end %>
+                </span>
+              </div>
+            </div>
+            </div>
+            <div class="col-md-2">
+              <%= link_to 'Buy', '#', class: 'btn btn-primary' %>
             </div>
           </div>
         <% end %>
