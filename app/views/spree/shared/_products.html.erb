@@ -27,7 +27,10 @@
           <%= small_image(product, itemprop: "image") %><br/>
           <div class="overlay"></div>
             <div class="panel-body text-center product-body">
-                <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
+              <div class="product-content">
+                <%= content_tag(:h4, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
+                <%= product.description %>
+              </div>
               <% end %>
               <br/>
               <!-- No need for price -->
