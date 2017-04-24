@@ -4,3 +4,5 @@ $(".panel").hover(
   }, function(){
       $(".panel-body", this).css("display", "none");
 });
+
+$("img").lazyload();
