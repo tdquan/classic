@@ -116,6 +116,7 @@ table {
 }
 
 .product-body {
+  color: white;
   padding: 0px;
   display: none;
   position: absolute;
@@ -131,17 +132,13 @@ table {
     width:100%;
     height:100%;
     left: 0;
-    background-color:#000;
-    opacity:0.5;
+    background-color: rgba(0,0,0,0.5);
     z-index: 100;
     display: block;
   }
 
   .product-body {
     display: block;
+    z-index: 120;
   }
-}
-
-.product-content {
-  color: white;
 }
