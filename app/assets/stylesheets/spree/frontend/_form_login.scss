@@ -1,0 +1,39 @@
+.panel {
+  border: none;
+  .panel-heading {
+    background: none;
+  }
+}
+
+.panel-default > .panel-heading {
+  border: none;
+}
+
+
+ #password-credentials {
+  margin-bottom: 25px;
+  .form-control {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid $brand-primary;
+    box-shadow: none;
+  }
+ }
+
+.new_spree_user {
+  .form-control {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid $brand-primary;
+    box-shadow: none;
+  }
+}
+
+.btn-form {
+  background: #343334;
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
+

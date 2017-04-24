@@ -25,6 +25,10 @@ gem 'spree_gateway', '~> 3.2.0.beta'
 ## text editor
 gem 'spree_editor', github: 'spree-contrib/spree_editor'
 
+# Translation
+gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: 'master'
+gem 'globalize', github: 'globalize/globalize'
+gem 'activemodel-serializers-xml'
 
 group :development, :test do
   gem 'binding_of_caller'

@@ -3,6 +3,7 @@
 @import "bootstrap-sprockets";
 @import "variables";
 @import "bootstrap";
+@import "index";
 
 // -- Spree Custom Header and Footer ---------------------
 #spree-header {
@@ -105,6 +106,9 @@ table {
   padding: 5px;
 }
 
+<<<<<<< HEAD
+
+=======
 // Products index
 .product {
   position: relative;
@@ -141,4 +145,8 @@ table {
     display: block;
     z-index: 120;
   }
+}
+
+.product-content {
+  color: white;
 }
