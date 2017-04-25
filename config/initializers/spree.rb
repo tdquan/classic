@@ -13,7 +13,7 @@ Spree.config do |config|
   # Example:
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
-  config.products_per_page = Spree::Product.count
+  config.products_per_page = 12
 end
 
 Spree.user_class = "Spree::User"
