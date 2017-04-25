@@ -443,6 +443,7 @@ DEPENDENCIES
   globalize!
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   listen (~> 3.0.5)
   pg
   pry-byebug
@@ -452,7 +453,7 @@ DEPENDENCIES
   redis
   sass-rails
   simple_form
-  spree (~> 3.2.0)
+  spree (~> 3.2.1)
   spree_auth_devise (~> 3.2.0.beta)
   spree_editor!
   spree_gateway (~> 3.2.0.beta)
