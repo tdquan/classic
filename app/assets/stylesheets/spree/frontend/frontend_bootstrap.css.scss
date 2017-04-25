@@ -41,9 +41,19 @@ a {
 
   .nav a {
     color: $brand-primary;
+    transition: all 0.3s ease;
 
     &:hover, &:focus {
-      background: rgba($gray-darker, 0.4);
+      font-weight: bolder;
+      text-decoration: none;
+    }
+  }
+
+  .nav > li > a {
+    &:hover, &:focus {
+    font-weight: bolder;
+    text-decoration: none;
+    background-color: transparent;
     }
   }
 
