@@ -1,5 +1,6 @@
 .panel {
   border: none;
+  box-shadow: none;
   .panel-heading {
     background: none;
   }
@@ -35,5 +36,17 @@
   &:hover {
     color: white;
   }
+}
+
+#guest_checkout {
+  .form-control {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid $brand-primary;
+    box-shadow: none;
+  }
+}
+.table > tfoot > tr.warning > td {
+   background-color: white;
 }
 
