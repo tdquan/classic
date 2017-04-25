@@ -6,6 +6,7 @@ $(document).on('ready', function() {
       $(".panel-body", this).css("display", "none");
   });
 
+  // INFINITE SCROLLING
   return $("#products").infinitescroll({
     navSelector: "ul.pagination",
     nextSelector: "ul.pagination a[rel=next]",
