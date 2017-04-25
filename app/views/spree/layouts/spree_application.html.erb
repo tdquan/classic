@@ -7,6 +7,7 @@
   <head data-hook="inside_head">
   <title>Classic</title>
     <%= render partial: 'spree/shared/head' %>
+    <%= favicon_link_tag 'favicon.png' %>
   </head>
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
     <%= render partial: 'spree/shared/google_analytics.js' %>
