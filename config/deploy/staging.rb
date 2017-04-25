@@ -13,7 +13,7 @@ set :branch, 'staging'
 set :ssh_options, {
     forward_agent: true,
     keys: %w(~/.ssh/id_rsa),
-    auth_methods: %w(publickey),
+    auth_methods: %w(password publickey),
     user: fetch(:user),
     password: 'classicpass'
   }
