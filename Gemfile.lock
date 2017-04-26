@@ -65,11 +65,6 @@ GEM
       nokogiri (~> 1.4)
     activemodel (5.0.2)
       activesupport (= 5.0.2)
-    activemodel-serializers-xml (1.0.1)
-      activemodel (> 5.x)
-      activerecord (> 5.x)
-      activesupport (> 5.x)
-      builder (~> 3.1)
     activerecord (5.0.2)
       activemodel (= 5.0.2)
       activesupport (= 5.0.2)
@@ -427,7 +422,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activemodel-serializers-xml
   autoprefixer-rails
   better_errors
   binding_of_caller

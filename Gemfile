@@ -28,9 +28,11 @@ gem 'kaminari'
 gem 'spree_editor', github: 'spree-contrib/spree_editor'
 
 # Translation
-gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: 'master'
-gem 'globalize', github: 'globalize/globalize'
+gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: '3-1-stable'
+gem 'globalize', github: 'globalize/globalize', branch: 'master'
 gem 'activemodel-serializers-xml'
+gem 'spree_globalize', github: 'spree-contrib/spree_globalize', branch: 'master'
+
 
 group :development, :test do
   gem 'binding_of_caller'
