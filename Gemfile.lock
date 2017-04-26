@@ -1,6 +1,7 @@
 GIT
   remote: git://github.com/globalize/globalize.git
   revision: 8daef404a33fce7d8e6bf444451335e6f4d828d2
+  branch: master
   specs:
     globalize (5.1.0.beta1)
       activemodel (>= 4.2, < 5.1)
@@ -65,11 +66,6 @@ GEM
       nokogiri (~> 1.4)
     activemodel (5.0.2)
       activesupport (= 5.0.2)
-    activemodel-serializers-xml (1.0.1)
-      activemodel (> 5.x)
-      activerecord (> 5.x)
-      activesupport (> 5.x)
-      builder (~> 3.1)
     activerecord (5.0.2)
       activemodel (= 5.0.2)
       activesupport (= 5.0.2)
@@ -427,7 +423,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activemodel-serializers-xml
   autoprefixer-rails
   better_errors
   binding_of_caller

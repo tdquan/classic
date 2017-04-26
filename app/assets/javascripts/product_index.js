@@ -1,10 +1,10 @@
 $(document).on('ready', function() {
-  $(".panel").hover(
-    function(){
-      $(".panel-body", this).css("display", "block");
-    }, function(){
-      $(".panel-body", this).css("display", "none");
-  });
+//  $(".panel").hover(
+//    function(){
+//      $(".panel-body", this).css("display", "block");
+ //   }, function(){
+ //     $(".panel-body", this).css("display", "none");
+ // });
 
   // INFINITE SCROLLING
   return $("#products").infinitescroll({

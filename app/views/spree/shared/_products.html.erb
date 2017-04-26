@@ -24,12 +24,14 @@
               <%= link_to url, itemprop: "url" do %>
         <div class="panel panel-default product card-block">
           <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
-          <%= small_image product, itemprop: "image" %><br/>
+          <%= large_image product, itemprop: "image" %><br/>
           <div class="overlay"></div>
             <div class="panel-body text-center product-body">
               <div class="product-content">
                 <%= content_tag(:h4, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
-                <p class='product-description'><%= raw product.description %></p>
+                <% if product.description %>
+                <p class='product-description'><%= raw product.description.truncate(300, separator: ' ') %></p>
+                <% end %>
               </div>
               <% end %>
               <br/>
