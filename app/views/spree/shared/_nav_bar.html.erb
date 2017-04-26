@@ -1,22 +1,52 @@
-<nav class="navbar col-md-10 col-sm-9" id="top-nav-bar">
-  <ul id="nav-bar" class="nav navbar-nav navbar-right" data-hook>
-    <% Spree::Taxonomy.all.each do |taxonomy| %>
-      <% taxon = taxonomy.taxons.first %>
-      <li class="nav-taxons">
-        <div class="taxon" data-hook="taxon">
-          <h5 class="subtaxon-title"><%= link_to taxon.name, seo_url(taxon), class: 'breadcrumbs' %></h5>
-        </div>
-      </li>
-    <% end %>
-    <li id="search-bar" data-hook>
-      <%= render partial: 'spree/shared/search' %>
-    </li>
-      <li id="link-to-cart" data-hook>
-        <noscript>
-          <%= link_to Spree.t(:cart), '/cart' %>
-        </noscript>
-        &nbsp;
-      </li>
-      <script>Spree.fetch_cart()</script>
-  </ul>
+<nav class="navbar navbar-default" id="top-nav-bar">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header col-md-3">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-classic" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <figure id="logo navbar-brand" data-hook>
+        <%= logo %>
+      </figure>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="col-md-9 collapse navbar-collapse navbar-right" id="navbar-classic">
+      <ul class="nav navbar-nav navbar-right">
+        <% Spree::Taxonomy.all.each do |taxonomy| %>
+          <% taxon = taxonomy.taxons.first %>
+          <li class="nav-taxons">
+            <div class="taxon" data-hook="taxon">
+              <%= link_to taxon.name, seo_url(taxon), class: 'breadcrumbs subtaxon-title' %>
+            </div>
+          </li>
+        <% end %>
+        <li id="navbar-search-bar" data-hook>
+          <%= render partial: 'spree/shared/search' %>
+        </li>
+        <li id="link-to-cart" class="nav-taxons" data-hook>
+          <noscript>
+            <%= link_to Spree.t(:cart), '/cart' %>
+          </noscript>
+          &nbsp;
+        </li>
+        <li id="navbar-account-link" class="nav-taxons">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your Account <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <% if spree_user_signed_in? %>
+              <li><%= link_to Spree.t(:my_account), spree.account_path, class: "dropdown-item" %></li>
+              <li><%= link_to Spree.t(:logout), spree.logout_path, class: "dropdown-item" %></li>
+            <% else %>
+              <li><%= link_to Spree.t(:login), spree.login_path, class: "dropdown-item" %></li>
+              <li><%= link_to Spree.t(:signup), spree.signup_path, class: "dropdown-item" %></li>
+            <% end %>
+          </ul>
+        </li>
+        <script>Spree.fetch_cart()</script>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>

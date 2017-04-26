@@ -1,4 +1,3 @@
-// Products index
 .product {
   position: relative;
   // display: inline-block;
@@ -9,7 +8,6 @@
 }
 
 .product-body {
-  color: white;
   padding: 0px;
   display: none;
   position: absolute;
@@ -25,18 +23,24 @@
     width:100%;
     height:100%;
     left: 0;
-    background-color: rgba(0,0,0,0.5);
+    background-color:#000;
+    opacity:0.5;
     z-index: 100;
     display: block;
   }
 
   .product-body {
     display: block;
-    z-index: 120;
   }
 }
 
 .product-content {
   color: white;
-  padding: 0px 5px;
+}
+
+.table > thead > tr > td.warning, .table > thead > tr > th.warning, .table > thead > tr.warning > td,
+.table > thead > tr.warning > th, .table > tbody > tr > td.warning, .table > tbody > tr > th.warning,
+.table > tbody > tr.warning > td, .table > tbody > tr.warning > th, .table > tfoot > tr > td.warning,
+.table > tfoot > tr > th.warning, .table > tfoot > tr.warning > td, .table > tfoot > tr.warning > th {
+  background-color: #f5f5f5;
 }
