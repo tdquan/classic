@@ -42,6 +42,7 @@ a {
   .nav a {
     color: $brand-primary;
     transition: all 0.3s ease;
+    font-size: 12px;
 
     &:hover, &:focus {
       font-weight: bolder;

@@ -1,6 +1,9 @@
 // Products index
 .product {
   position: relative;
+  width: 250px;
+  height: 200px;
+  margin: 0px 10px;
   // display: inline-block;
   img {
     width: 100%;
@@ -39,4 +42,10 @@
 .product-content {
   color: white;
   padding: 0px 5px;
+  h4 {
+    font-size: 14px;
+  }
+  p {
+    font-size: 12px;
+  }
 }
