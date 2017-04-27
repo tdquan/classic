@@ -16,7 +16,7 @@
   }
 
   #top-nav-bar {
-    height: 80px;
+    min-height: 80px;
     line-height: 80px;
     background-color: white;
   }
@@ -56,6 +56,10 @@
       border-bottom: 1px solid transparent;
       &:hover, &:focus {
         border-color: $brand-primary;
+      }
+      &.dropdown-item {
+        line-height: 30px;
+        text-align: center;
       }
     }
   }

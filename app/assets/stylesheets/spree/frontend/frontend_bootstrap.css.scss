@@ -1,9 +1,9 @@
 //Add your custom bootstrap variables here, see https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss for full list of variables.
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
 @import "../../config/variables";
 @import "../../config/bootstrap_variables";
+@import "bootstrap";
+@import "bootstrap-sprockets";
 @import "index";
 
 //  Fonts
