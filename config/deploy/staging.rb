@@ -18,6 +18,7 @@ set :ssh_options, {
     password: 'classicpass'
   }
 
+run "ln -nfs /home/classic/staging/shared/spree/products/:id/:style/:basename.:extension /home/classic/staging/current/public/spree/products"
 
 # server-based syntax
 # ======================
