@@ -18,11 +18,10 @@ set :ssh_options, {
     password: 'classicpass'
   }
 
-before "deploy:restart", :symlink_directories
-task :symlink_directories do
-    run "rm -rf /home/classic/staging/current/public/spree/products"
-    run "ln -nfs /home/classic/staging/shared/spree/products /home/classic/staging/current/public/spree/products"
+task :execute_on_server do
+    execute "ln -nfs /home/classic/staging/shared/spree/products /home/classic/staging/current/public/spree/products"
 end
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
