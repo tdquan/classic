@@ -19,7 +19,6 @@ set :ssh_options, {
   }
 
 
-    execute "ln -nfs /home/classic/staging/shared/spree/products /home/classic/staging/current/public/spree/products"
 
 
 # server-based syntax
