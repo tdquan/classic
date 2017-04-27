@@ -20,7 +20,8 @@ set :ssh_options, {
 
 before "deploy:restart", :symlink_directories
 task :symlink_directories do
-    run "ln -nfs /home/classic/staging/shared/spree/products/:id/:style/:basename.:extension /home/classic/staging/current/public/spree/products"
+    run "rm -rf /home/classic/staging/current/public/spree/products"
+    run "ln -nfs /home/classic/staging/shared/spree/products /home/classic/staging/current/public/spree/products"
 end
 # server-based syntax
 # ======================
