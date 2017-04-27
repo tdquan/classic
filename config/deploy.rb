@@ -18,9 +18,9 @@ namespace :deploy do
 
   desc "Image symlink"
   task :create_symlink do
-    on roles(:all) do
-        execute :chown, "rm -rf /home/classic/staging/current/public/spree/products"
-        execute :chown, "ln -nfs /home/classic/staging/shared/spree/products /home/classic/staging/current/public/spree/products"
+    on roles :all do
+        execute "rm -rf /home/classic/staging/current/public/spree/products"
+        execute "ln -nfs /home/classic/staging/shared/spree/products /home/classic/staging/current/public/spree/products"
     end
   end
 
