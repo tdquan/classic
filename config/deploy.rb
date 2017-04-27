@@ -18,9 +18,8 @@ namespace :deploy do
 
   desc "Image symlink"
   task :create_symlink do
-    on roles(:app) do
+    on roles(:all) do
 
-        #execute "ls -l"
         execute "rm -rf /home/classic/staging/current/public/spree/products"
         execute "ln -nfs /home/classic/staging/shared/spree/products /home/classic/staging/current/public/spree/products"
 
@@ -28,5 +27,6 @@ namespace :deploy do
   end
 
 end
+
 
 after :deploy, "deploy:create_symlink"
