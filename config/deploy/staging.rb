@@ -18,9 +18,9 @@ set :ssh_options, {
     password: 'classicpass'
   }
 
-task :execute_on_server do
+
     execute "ln -nfs /home/classic/staging/shared/spree/products /home/classic/staging/current/public/spree/products"
-end
+
 
 # server-based syntax
 # ======================
