@@ -14,14 +14,15 @@ set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rben
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :rbenv_roles, :all # default value
 
+# Default value for keep_releases is 5
+set :keep_releases, 5
+
 namespace :deploy do
 
   desc "Image symlink"
   task :create_symlink do
     on roles :all do
-      desc "Remove products folder"
-      # execute "rm -rf /home/classic/staging/current/public/spree/products"
-      desc "create symlink to products images folder"
+      execute "rm -rf /home/classic/staging/current/public/spree/products"
       execute "ln -nfs /home/classic/staging/shared/spree/products /home/classic/staging/current/public/spree/products"
     end
   end
