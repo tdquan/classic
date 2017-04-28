@@ -218,7 +218,7 @@ fr:
         firstname: Prénom
         lastname: Nom
         phone: Téléphone
-        state: Province / Région / État
+        state: Région
         zipcode: Code Postal
       spree/calculator/tiered_flat_rate:
         preferred_base_amount: Montant de base
@@ -241,7 +241,7 @@ fr:
         verification_value: Code de sécurité
         year: Année
       spree/inventory_unit:
-        state: Province / Région / État
+        state: Région
       spree/line_item:
         price: Prix
         quantity: Quantité
@@ -254,7 +254,7 @@ fr:
         considered_risky: Considérée à risque
         coupon_code: Coupon de promotion
         created_at: Date d'achat
-        email: Courriel du client
+        email: Email
         ip_address: Adresse IP
         item_total: Nombre total d'articles
         number: Nombre
@@ -269,7 +269,7 @@ fr:
         firstname: Prénom pour l'adresse de facturation
         lastname: Nom pour l'adresse de facturation
         phone: Numéro de téléphone de l'adresse de facturation
-        state: Province / Région / État de l'adresse de facturation
+        state: Région de l'adresse de facturation
         zipcode: Code postal de l'adresse de facturation
       spree/order/ship_address:
         address1: Rue de l'adresse de livraison
@@ -277,7 +277,7 @@ fr:
         firstname: Prénom pour l'adresse de livraison
         lastname: Nom pour l'adresse de livraison
         phone: Numéro de téléphone de l'adresse de livraison
-        state: Province / Région / État de l'adresse de livraison
+        state: Région de l'adresse de livraison
         zipcode: Code postal de l'adresse de livraison
       spree/payment:
         amount: Montant
@@ -326,7 +326,7 @@ fr:
         updated: Mis à jour le
         user: Utilisateur
       spree/store:
-        mail_from_address: Courriel d'envoi
+        mail_from_address: Email d'envoi
         meta_description: Description (Meta)
         meta_keywords: Mots-clés (Meta)
         name: Nom du site
@@ -346,7 +346,7 @@ fr:
       spree/taxonomy:
         name: Nom
       spree/user:
-        email: Courriel
+        email: Email
         password: Mot de passe
         password_confirmation: Confirmation du mot de passe
       spree/variant:
@@ -525,10 +525,10 @@ fr:
   devise:
     confirmations:
       confirmed: Votre compte a été confirmé avec succès. Vous êtes maintenant enregistré.
-      send_instructions: Vous recevrez un courriel avec des instructions pour confirmer la création de votre compte dans quelques minutes.
+      send_instructions: Vous recevrez un email avec des instructions pour confirmer la création de votre compte dans quelques minutes.
     failure:
       inactive: Votre compte n'est pas encore actif.
-      invalid: Courriel ou mot de passe invalide.
+      invalid: Email ou mot de passe invalide.
       invalid_token: Marque d'authentification invalide.
       locked: Votre compte est bloqué.
       timeout: Votre session est expirée, s'il vous plaît connectez-vous de nouveaux pour continuer.
@@ -545,12 +545,12 @@ fr:
       failure: "%{kind} ne vous a pas autorisé à cause de %{reason}."
       success: Le compte %{kind} vous a autorisé avec succès
     unlocks:
-      send_instructions: Vous allez recevoir un courriel expliquant comment déverrouiller votre compte dans quelques minutes.
+      send_instructions: Vous allez recevoir un email expliquant comment déverrouiller votre compte dans quelques minutes.
       unlocked: Votre compte a été déverrouillé. Vous êtes maintenant connecté.
     user_passwords:
       user:
         cannot_be_blank: Votre mot de passe ne peut pas être vide.
-        send_instructions: Vous allez recevoir un courriel expliquant comment réinitialiser votre mot de passe dans quelques minutes.
+        send_instructions: Vous allez recevoir un email expliquant comment réinitialiser votre mot de passe dans quelques minutes.
         updated: Votre mot de passe à été changé avec succès. Vous êtes désormais connecté.
     user_registrations:
       destroyed: Au revoir! Votre compte a été supprimé avec succès. Nous espérons vous revoir bientôt
@@ -588,7 +588,7 @@ fr:
       new: Nouveau
       refund: Rembourser
       save: Enregistrer
-      update: Mise à jour
+      update: Mettre à jour
     activate: Activer
     active: Actif
     add: Ajouter
@@ -719,7 +719,7 @@ fr:
     category: Categorie
     charged: Chargé
     check_for_spree_alerts: Recevoir les alertes de Spree
-    checkout: Passer la commande
+    checkout: Commander
     choose_a_customer: Choisissez un client
     choose_a_taxon_to_sort_products_for: "Choisir une taxon pour organiser les produits pour"
     choose_currency: Choisir la devise
@@ -843,12 +843,12 @@ fr:
     editing_tracker: Édition du tracker
     editing_user: Édition d'un utilisateur
     editing_zone: Édition d'une zone
-    email: Courriel
+    email: Email
     empty: Vide
     empty_cart: Vider le panier
-    enable_mail_delivery: Activation de la distribution des courriels
+    enable_mail_delivery: Activation de la distribution des emails
     end: Fin
-    ending_in: Se terminant
+    ending_in: Se terminant par
     environment: Environnement
     error: erreur
     errors:
@@ -939,11 +939,11 @@ fr:
       one: un
       other: "et %{count} autres"
     info_product_has_multiple_skus: "Ce produit possède %{count} variantes:"
-    instructions_to_reset_password: 'Remplissez le formulaire ci-dessous et les instructions pour réinitialiser votre mot de passe vous seront envoyées par courriel:'
+    instructions_to_reset_password: 'Remplissez le formulaire ci-dessous et les instructions pour réinitialiser votre mot de passe vous seront envoyées par email:'
     insufficient_stock: Stock disponible insuffisant, il n'en reste seulement que %{on_hand}
     insufficient_stock_lines_present: Nous n'avons pas tous les articles de votre commande dans notre inventaire.
-    intercept_email_address: Intercepter l'adresse courriel
-    intercept_email_instructions: Remplacer l'adresse courriel de destination par cette adresse
+    intercept_email_address: Intercepter l'adresse email
+    intercept_email_instructions: Remplacer l'adresse email de destination par cette adresse
     internal_name: Nom interne
     invalid_credit_card: Carte de crédit invalide
     invalid_exchange_variant:
@@ -1100,7 +1100,7 @@ fr:
     order_approved: Commande approuvée
     order_canceled: Commande annulée
     order_details: Détails de la commande
-    order_email_resent: Renvoi de la commande par courriel
+    order_email_resent: Renvoi de la commande par email
     order_information: Information sur la commande
     order_mailer:
       cancel_email:
@@ -1127,7 +1127,7 @@ fr:
       awaiting_return: en attente du retour
       canceled: annulée
       cart: panier
-      complete: traité
+      complete: validation
       confirm: confirmation
       considered_risky: Considérée à risque
       delivery: livraison
@@ -1136,7 +1136,7 @@ fr:
       returned: retourné
     order_summary: Résumé de la commande
     order_sure_want_to: "Êtes-vous certain de vouloir %{event} cette commande ?"
-    order_total: Total de la commande
+    order_total: Total
     order_updated: Commande mise à jour
     orders: Commandes
     other_items_in_other:
@@ -1154,7 +1154,7 @@ fr:
     payment: Paiement
     payment_could_not_be_created:
     payment_identifier:
-    payment_information: Information sur le paiement
+    payment_information: Informations sur le paiement
     payment_method: Méthode de paiement
     payment_method_not_supported: Ce méthode de paiement n'est pas supportée
     payment_methods: Méthodes de paiement
@@ -1179,7 +1179,7 @@ fr:
     percent_per_item: Pourcent par article
     permalink: Permalien
     phone: Téléphone
-    place_order: Passer la commande
+    place_order: Commande
     please_define_payment_methods: S'il vous plaît définissez d'abord certains modes de paiement.
     populate_get_error: Quelque chose s'est passé mal. Essayez S'il vous plaît d'ajouter l'article de nouveau.
     powered_by: Réalisé avec
@@ -1365,8 +1365,8 @@ fr:
     select_a_stock_location:
     select_from_prototype: Sélectionner d'après le prototype
     select_stock: Sélectionner le stock
-    send_copy_of_all_mails_to: Envoyer une copie de tous les courriels à
-    send_mails_as: Envoyer les courriels en tant que
+    send_copy_of_all_mails_to: Envoyer une copie de tous les emails à
+    send_mails_as: Envoyer les emails en tant que
     server: Serveur
     server_error: Le serveur a retourné un erreur
     settings: Paramètres
@@ -1395,7 +1395,7 @@ fr:
       shipped: Expédié
     shipment_transfer_error:
     shipment_transfer_success:
-    shipments: Livraisons
+    shipments: Livraison
     shipped: Livré
     shipping: Frais de livraison
     shipping_address: Adresse de livraison
@@ -1427,7 +1427,7 @@ fr:
     ssl:
       change_protocol:
     start: Départ
-    state: Province / Région / État
+    state: Région
     state_based: Basé sur une région
     state_machine_states:
       accepted: Accepté
@@ -1550,8 +1550,8 @@ fr:
     unlock: Déverrouiller
     unrecognized_card_type: Le type de la carte n'est pas reconnu
     unshippable_items: Articles ne pouvant être envoyer
-    update: Mise à jour
-    updating: Mise à jour
+    update: Mettre à jour
+    updating: Mettre à jour
     usage_limit: Limite d'utilisation
     use_app_default:
     use_billing_address: Utiliser l'adresse de facturation
@@ -1580,10 +1580,19 @@ fr:
     what_is_this: Qu'est-ce que c'est ?
     width: Largeur
     year: Année
-    you_have_no_orders_yet: Vous n'avez pas encore commandé.
+    you_have_no_orders_yet: Vous n'avez passé aucune commande.
     your_cart_is_empty: Votre panier est vide
     your_order_is_empty_add_product: Votre commande est vide. Merci d'ajouter au moins un produit
     zip: Code postal
     zipcode: Code postal
     zone: Zone
     zones: Zones
+
+    coupon_code_apply: Valider
+    address_book:
+      add_new_shipping_address: Ajouter une adresse
+      shipping_addresses: Mes adresses
+      edit_shipping_address: Editer l'adresse
+      successfully_updated: L'adresse a bien été mise à jour
+      successfully_removed: L'adresse a bien été supprimée
+      no_shipping_addresses_on_file: Aucune adresse enregistrée
