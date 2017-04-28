@@ -23,3 +23,14 @@ table {
   }
 }
 
+@media (max-width: 992px) {
+  .coupon-code, .cart-buttons {
+    width: 100%;
+    float: none;
+  }
+
+  #empty-cart {
+    padding: 0;
+  }
+}
+
