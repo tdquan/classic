@@ -18,7 +18,7 @@ set :ssh_options, {
     password: 'classicpass'
   }
 
-
+set :keep_releases, 5
 
 
 # server-based syntax
