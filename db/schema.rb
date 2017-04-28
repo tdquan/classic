@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170424081443) do
+ActiveRecord::Schema.define(version: 20170428084802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -220,6 +220,17 @@ ActiveRecord::Schema.define(version: 20170424081443) do
     t.index ["prototype_id", "option_type_id"], name: "index_option_types_prototypes_on_prototype_and_option_type", using: :btree
   end
 
+  create_table "spree_option_type_translations", force: :cascade do |t|
+    t.integer  "spree_option_type_id", null: false
+    t.string   "locale",               null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "name"
+    t.string   "presentation"
+    t.index ["locale"], name: "index_spree_option_type_translations_on_locale", using: :btree
+    t.index ["spree_option_type_id"], name: "index_spree_option_type_translations_on_spree_option_type_id", using: :btree
+  end
+
   create_table "spree_option_types", force: :cascade do |t|
     t.string   "name",         limit: 100
     t.string   "presentation", limit: 100
@@ -398,6 +409,19 @@ ActiveRecord::Schema.define(version: 20170424081443) do
     t.index ["property_id"], name: "index_spree_product_properties_on_property_id", using: :btree
   end
 
+  create_table "spree_product_translations", force: :cascade do |t|
+    t.integer  "spree_product_id", null: false
+    t.string   "locale",           null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "name"
+    t.text     "description"
+    t.string   "meta_description"
+    t.string   "meta_keywords"
+    t.index ["locale"], name: "index_spree_product_translations_on_locale", using: :btree
+    t.index ["spree_product_id"], name: "index_spree_product_translations_on_spree_product_id", using: :btree
+  end
+
   create_table "spree_products", force: :cascade do |t|
     t.string   "name",                 default: "",   null: false
     t.text     "description"
@@ -484,6 +508,17 @@ ActiveRecord::Schema.define(version: 20170424081443) do
     t.index ["user_id"], name: "index_promotion_rules_on_user_id", using: :btree
   end
 
+  create_table "spree_promotion_translations", force: :cascade do |t|
+    t.integer  "spree_promotion_id", null: false
+    t.string   "locale",             null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "name"
+    t.string   "description"
+    t.index ["locale"], name: "index_spree_promotion_translations_on_locale", using: :btree
+    t.index ["spree_promotion_id"], name: "index_spree_promotion_translations_on_spree_promotion_id", using: :btree
+  end
+
   create_table "spree_promotions", force: :cascade do |t|
     t.string   "description"
     t.datetime "expires_at"
@@ -518,6 +553,17 @@ ActiveRecord::Schema.define(version: 20170424081443) do
     t.integer "prototype_id"
     t.integer "property_id"
     t.index ["prototype_id", "property_id"], name: "index_properties_prototypes_on_prototype_and_property", using: :btree
+  end
+
+  create_table "spree_property_translations", force: :cascade do |t|
+    t.integer  "spree_property_id", null: false
+    t.string   "locale",            null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "name"
+    t.string   "presentation"
+    t.index ["locale"], name: "index_spree_property_translations_on_locale", using: :btree
+    t.index ["spree_property_id"], name: "index_spree_property_translations_on_spree_property_id", using: :btree
   end
 
   create_table "spree_prototype_taxons", force: :cascade do |t|
@@ -920,12 +966,37 @@ ActiveRecord::Schema.define(version: 20170424081443) do
     t.index ["zone_id"], name: "index_spree_tax_rates_on_zone_id", using: :btree
   end
 
+  create_table "spree_taxon_translations", force: :cascade do |t|
+    t.integer  "spree_taxon_id",   null: false
+    t.string   "locale",           null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "name"
+    t.text     "description"
+    t.string   "meta_title"
+    t.string   "meta_description"
+    t.string   "meta_keywords"
+    t.string   "permalink"
+    t.index ["locale"], name: "index_spree_taxon_translations_on_locale", using: :btree
+    t.index ["spree_taxon_id"], name: "index_spree_taxon_translations_on_spree_taxon_id", using: :btree
+  end
+
   create_table "spree_taxonomies", force: :cascade do |t|
     t.string   "name",                   null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.integer  "position",   default: 0
     t.index ["position"], name: "index_spree_taxonomies_on_position", using: :btree
+  end
+
+  create_table "spree_taxonomy_translations", force: :cascade do |t|
+    t.integer  "spree_taxonomy_id", null: false
+    t.string   "locale",            null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "name"
+    t.index ["locale"], name: "index_spree_taxonomy_translations_on_locale", using: :btree
+    t.index ["spree_taxonomy_id"], name: "index_spree_taxonomy_translations_on_spree_taxonomy_id", using: :btree
   end
 
   create_table "spree_taxons", force: :cascade do |t|
