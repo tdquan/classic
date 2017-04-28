@@ -25,7 +25,7 @@ gem 'spree_gateway', '~> 3.2.0.beta'
 gem 'kaminari'
 
 ## text editor
-# gem 'spree_editor', github: 'spree-contrib/spree_editor'
+gem 'spree_editor', github: 'spree-contrib/spree_editor'
 
 # Translation
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: 'master'
