@@ -6,9 +6,15 @@
     background: white;
   }
 
+  .navbar-header {
+    width: 15%;
+    @media screen and (max-width: 767px) {
+      width: auto;
+    }
+  }
+
   #logo {
     margin-bottom: 10px;
-
     img {
       max-width: 100%;
       max-height: 50px;
@@ -83,6 +89,10 @@
       }
     }
   }
+
+  @media screen and (max-width: 1198px) {
+    font-size: 14px;
+  }
 }
 
 #navbar-search-bar {
@@ -100,4 +110,29 @@
   padding-top: $padding-base-horizontal;
   margin-top: $line-height-computed;
   color: white;
+}
+
+@media (min-width: 768px) and (max-width: 1132px) {
+  #spree-header {
+    .navbar-header {
+      width: 100%;
+      #logo {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    #navbar-classic {
+      width: 100%;
+      ul {
+        width: 100%;
+        text-align: center;
+        float: none;
+        &.navbar-nav > li {
+          float: none;
+          display: inline-block;
+        }
+      }
+    }
+  }
 }
