@@ -29,3 +29,4 @@ namespace :deploy do
 end
 
 after :deploy, "deploy:create_symlink"
+after "deploy:restart", "deploy:cleanup"
