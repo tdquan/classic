@@ -27,17 +27,21 @@ namespace :deploy do
     end
   end
 
-  # desc "Killing old processes and restarting unicorn"
-  # task :restart_unicorn do
-  #   on roles :app do
-  #     execute "exec $SHELL"
-  #     execute "ps -ef | grep classic | grep '[u]nicorn master' | awk '{print $2}' | xargs kill -9"
-  #     execute "cd staging/current"
-  #     execute "bundle exec unicorn -c config/unicorn.rb -E production -D"
-  #   end
-  # end
+  desc "Killing old processes and restarting unicorn"
+  task :restart_unicorn do
+    on roles :app do
+      execute "exec $SHELL"
+      puts "done with $SHELL"
+      within "~/staging/current/" do
+        puts "doing ps"
+        execute "ps -ef | grep classic | grep '[u]nicorn master' | awk '{print $2}' | xargs kill -9"
+        puts "restarting unicorn"
+        execute "bundle exec unicorn -c config/unicorn.rb -E production -D"
+      end
+    end
+  end
 end
 
 after :deploy, "deploy:create_symlink"
-# after :deploy, "deploy:restart_unicorn"
+after :deploy, "deploy:restart_unicorn"
 after :deploy, "deploy:restart", "deploy:cleanup"
