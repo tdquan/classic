@@ -30,7 +30,7 @@ namespace :deploy do
   desc "Killing old processes and restarting unicorn"
   task :restart_unicorn do
     on roles :app do
-      execute "exec $SHELL"
+      execute "$SHELL"
       puts "done with $SHELL"
       within "~/staging/current/" do
         puts "doing ps"
