@@ -20,7 +20,7 @@
           <% taxon = taxonomy.taxons.first %>
           <li class="nav-taxons">
             <div class="taxon" data-hook="taxon">
-              <%= link_to taxon.name, seo_url(taxon), class: 'breadcrumbs subtaxon-title' %>
+              <%= link_to Spree.t(taxon.name.to_sym), seo_url(taxon), class: 'breadcrumbs subtaxon-title' %>
             </div>
           </li>
         <% end %>
@@ -34,7 +34,7 @@
           &nbsp;
         </li>
         <li id="navbar-account-link" class="nav-taxons">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your Account <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= Spree.t(:your_account) %><span class="caret"></span></a>
           <ul class="dropdown-menu">
             <% if spree_user_signed_in? %>
               <li><%= link_to Spree.t(:my_account), spree.account_path, class: "dropdown-item" %></li>
@@ -44,6 +44,9 @@
               <li><%= link_to Spree.t(:signup), spree.signup_path, class: "dropdown-item" %></li>
             <% end %>
           </ul>
+        </li>
+        <li class="locale-choice">
+          <%= link_to "FR", "/locale/set?locale=fr" %>/<%= link_to "EN", "/locale/set?locale=en" %>
         </li>
         <script>Spree.fetch_cart()</script>
       </ul>
