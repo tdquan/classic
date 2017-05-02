@@ -30,10 +30,8 @@ namespace :deploy do
   desc "Killing old processes and restarting unicorn"
   task :restart_unicorn do
     on roles :app do
-      execute "source ~/.bashrc"
       execute "ps -ef | grep classic | grep '[u]nicorn master' | awk '{print $2}' | xargs kill -9"
-      execute "cd staging/current"
-      execute "bundle exec unicorn -c config/unicorn.rb -E production -D"
+      execute "/home/classic/.rbenv/shims/unicorn -c ~/staging/current/config/unicorn.rb -E production -D"
     end
   end
 end
