@@ -6,6 +6,7 @@ set :repo_url, "git@git.cbm-groupe.fr:mld/classic.git"
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.3.1'
+set :use_sudo, false
 
 # in case you want to set ruby version from the file:
 # set :rbenv_ruby, File.read('.ruby-version').strip
@@ -29,7 +30,7 @@ namespace :deploy do
 
   desc "Killing old processes and restarting unicorn"
   task :restart_unicorn do
-    on roles :all do
+    on roles :app do
       execute "exec $SHELL"
       execute "ps -ef | grep classic | grep '[u]nicorn master' | awk '{print $2}' | xargs kill -9"
       execute "cd staging/current"
