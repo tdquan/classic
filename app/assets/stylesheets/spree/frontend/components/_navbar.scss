@@ -90,6 +90,11 @@
     }
   }
 
+  .locale-choice {
+    display: flex;
+    align-items: center;
+  }
+
   @media screen and (max-width: 1198px) {
     font-size: 14px;
   }
