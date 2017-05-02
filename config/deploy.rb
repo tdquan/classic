@@ -26,7 +26,17 @@ namespace :deploy do
       execute "ln -nfs /home/classic/staging/shared/spree/products /home/classic/staging/current/public/spree/products"
     end
   end
+
+  desc "Killing old processes and restarting unicorn"
+  task :restart_unicorn do
+    on roles :all do
+      execute "exec $SHELL"
+      execute "kill -9 $(ps -ef | grep classic | grep 'unicorn master' | awk '{print $2}')"
+      execute "bundle exec unicorn -c ~/staging/current/config/unicorn.rb -E production -D"
+    end
+  end
 end
 
 after :deploy, "deploy:create_symlink"
+after :deploy, "deploy:restart_unicorn"
 after "deploy:restart", "deploy:cleanup"
