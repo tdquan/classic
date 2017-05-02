@@ -6,7 +6,6 @@ set :repo_url, "git@git.cbm-groupe.fr:mld/classic.git"
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.3.1'
-set :use_sudo, false
 
 # in case you want to set ruby version from the file:
 # set :rbenv_ruby, File.read('.ruby-version').strip
