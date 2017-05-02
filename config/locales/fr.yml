@@ -523,6 +523,9 @@ fr:
         one: Zone
         other: Zones
   devise:
+    sessions:
+      spree_user:
+        signed_out: Vous êtes désormais déconnecté.
     confirmations:
       confirmed: Votre compte a été confirmé avec succès. Vous êtes maintenant enregistré.
       send_instructions: Vous recevrez un email avec des instructions pour confirmer la création de votre compte dans quelques minutes.
@@ -568,6 +571,9 @@ fr:
       not_saved:
         one: "%{resource} n'a pu etre sauvegardé à cause d' 1 erreur:"
         other: "%{resource} n'a pu etre sauvegardé à cause de %{count} erreurs:"
+  sessions:
+    spree_user:
+      signed_out: Vous êtes désormais déconnecté.
   spree:
     abbreviation: Abréviation
     accept: Accepter
@@ -1587,6 +1593,8 @@ fr:
     zipcode: Code postal
     zone: Zone
     zones: Zones
+    your_account: Votre compte
+    signup: S'enregistrer
 
     coupon_code_apply: Valider
     address_book:
@@ -1596,3 +1604,13 @@ fr:
       successfully_updated: L'adresse a bien été mise à jour
       successfully_removed: L'adresse a bien été supprimée
       no_shipping_addresses_on_file: Aucune adresse enregistrée
+
+    artistes: Artistes
+    ouvrages: Ouvrages
+    projets: Projets
+    boutiques: Boutiques
+    buy: Acheter
+    use_existing_cc: Carte enregistrée
+    use_new_cc_or_payment_method: Nouvelle carte ou moyens de paiement
+    shipment_details: Détails de livraison
+
