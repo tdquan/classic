@@ -31,8 +31,9 @@ namespace :deploy do
   task :restart_unicorn do
     on roles :all do
       execute "exec $SHELL"
-      execute "kill -9 $(ps -ef | grep classic | grep 'unicorn master' | awk '{print $2}')"
-      execute "bundle exec unicorn -c ~/staging/current/config/unicorn.rb -E production -D"
+      execute "ps -ef | grep classic | grep '[u]nicorn master' | awk '{print $2}' | xargs kill -9"
+      execute "cd staging/current"
+      execute "bundle exec unicorn -c config/unicorn.rb -E production -D"
     end
   end
 end
