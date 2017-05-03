@@ -32,7 +32,6 @@
       color: $brand-primary;
       transition: all 0.3s ease;
       display: inline-block;
-      width: 100%;
     }
   }
 
@@ -91,8 +90,7 @@
   }
 
   .locale-choice {
-    display: flex;
-    align-items: center;
+    text-align: center;
   }
 
   @media screen and (max-width: 1198px) {
@@ -107,6 +105,7 @@
     input[type="search"] {
       border-radius: 8px;
     }
+
   }
 }
 
@@ -117,7 +116,7 @@
   color: white;
 }
 
-@media (min-width: 768px) and (max-width: 1132px) {
+@media (min-width: 768px) and (max-width: 1302px) {
   #spree-header {
     .navbar-header {
       width: 100%;
@@ -139,5 +138,11 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  #navbar-search-bar {
+    padding: 0 15px;
   }
 }
