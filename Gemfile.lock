@@ -1,14 +1,4 @@
 GIT
-  remote: git://github.com/globalize/globalize.git
-  revision: 8daef404a33fce7d8e6bf444451335e6f4d828d2
-  branch: master
-  specs:
-    globalize (5.1.0.beta1)
-      activemodel (>= 4.2, < 5.1)
-      activerecord (>= 4.2, < 5.1)
-      request_store (~> 1.0)
-
-GIT
   remote: git://github.com/spree-contrib/spree_address_book.git
   revision: b5c6831a582c5ba658c9656b8fd5c61409ae2774
   specs:
@@ -299,7 +289,6 @@ GEM
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
     redis (3.3.3)
-    request_store (1.3.2)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
     routing-filter (0.6.0)
@@ -442,7 +431,6 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   figaro
   font-awesome-sass
-  globalize!
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
