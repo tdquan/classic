@@ -142,6 +142,10 @@
 }
 
 @media (max-width: 768px) {
+  .navbar-brand {
+    padding-top: 3px;
+  }
+
   #navbar-search-bar {
     padding: 0 15px;
   }

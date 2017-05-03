@@ -30,7 +30,7 @@
               <div class="product-content">
                 <%= content_tag(:h4, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
                 <% if product.description %>
-                <p class='product-description'><%= raw product.description.truncate(300, separator: ' ') %></p>
+                  <div class="product-description"><%= raw product.description.truncate(300, separator: ' ') %></div>
                 <% end %>
               </div>
               <% end %>

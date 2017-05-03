@@ -48,3 +48,7 @@ STATEMENT:  INSERT INTO "spree_taxonomies" ("created_at", "updated_at", "positio
 ERROR:  null value in column "name" violates not-null constraint
 DETAIL:  Failing row contains (3, null, 2017-05-03 13:20:28.015812, 2017-05-03 13:20:28.015812, 1).
 STATEMENT:  INSERT INTO "spree_taxonomies" ("created_at", "updated_at", "position") VALUES ($1, $2, $3) RETURNING "id"
+ERROR:  column spree_calculators.deleted_at does not exist at character 62
+STATEMENT:  SELECT  "spree_calculators".* FROM "spree_calculators" WHERE "spree_calculators"."deleted_at" IS NULL ORDER BY "spree_calculators"."id" ASC LIMIT $1
+ERROR:  column spree_addresses.user_id does not exist at character 57
+STATEMENT:  SELECT "spree_addresses".* FROM "spree_addresses" WHERE "spree_addresses"."user_id" = $1 AND "spree_addresses"."deleted_at" IS NULL ORDER BY updated_at DESC
