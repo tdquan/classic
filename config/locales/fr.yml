@@ -1,4 +1,12 @@
 fr:
+  address_book:
+    add_new_shipping_address: Ajouter une adresse
+    shipping_addresses: Mes adresses
+    edit_shipping_address: Editer l'adresse
+    successfully_updated: L'adresse a bien été mise à jour
+    successfully_removed: L'adresse a bien été supprimée
+    no_shipping_addresses_on_file: Aucune adresse enregistrée
+
   date:
     abbr_day_names:
       - dim
@@ -1607,10 +1615,3 @@ fr:
     use_new_cc_or_payment_method: Nouvelle carte ou moyens de paiement
     shipment_details: Détails de livraison
 
-address_book:
-  add_new_shipping_address: Ajouter une adresse
-  shipping_addresses: Mes adresses
-  edit_shipping_address: Editer l'adresse
-  successfully_updated: L'adresse a bien été mise à jour
-  successfully_removed: L'adresse a bien été supprimée
-  no_shipping_addresses_on_file: Aucune adresse enregistrée

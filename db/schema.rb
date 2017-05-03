@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419154649) do
+ActiveRecord::Schema.define(version: 20170503152035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,10 +57,14 @@ ActiveRecord::Schema.define(version: 20170419154649) do
     t.integer  "country_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "user_id"
+    t.datetime "deleted_at"
     t.index ["country_id"], name: "index_spree_addresses_on_country_id", using: :btree
+    t.index ["deleted_at"], name: "index_spree_addresses_on_deleted_at", using: :btree
     t.index ["firstname"], name: "index_addresses_on_firstname", using: :btree
     t.index ["lastname"], name: "index_addresses_on_lastname", using: :btree
     t.index ["state_id"], name: "index_spree_addresses_on_state_id", using: :btree
+    t.index ["user_id"], name: "index_spree_addresses_on_user_id", using: :btree
   end
 
   create_table "spree_adjustments", force: :cascade do |t|
