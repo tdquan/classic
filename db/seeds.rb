@@ -5,7 +5,7 @@ Spree::Auth::Engine.load_seed if defined?(Spree::Auth)
 Spree::Product.destroy_all
 Spree::Taxon.destroy_all
 Spree::Taxonomy.destroy_all
-p "destroy"
+puts "Destroyed!"
 
 ## option 1
 # category_taxonomy = Spree::Taxonomy.create!(name: 'Categorie')

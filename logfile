@@ -20,3 +20,31 @@ LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
 FATAL:  lock file "postmaster.pid" already exists
 HINT:  Is another postmaster (PID 5144) running in data directory "/usr/local/var/postgres/data"?
+ERROR:  database "classic_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "classic_development"
+ERROR:  null value in column "name" violates not-null constraint
+DETAIL:  Failing row contains (1, null, 2017-05-03 12:55:35.784424, 2017-05-03 12:55:35.784424, 1).
+STATEMENT:  INSERT INTO "spree_taxonomies" ("created_at", "updated_at", "position") VALUES ($1, $2, $3) RETURNING "id"
+ERROR:  null value in column "name" violates not-null constraint
+DETAIL:  Failing row contains (2, null, 2017-05-03 12:59:53.05688, 2017-05-03 12:59:53.05688, 1).
+STATEMENT:  INSERT INTO "spree_taxonomies" ("created_at", "updated_at", "position") VALUES ($1, $2, $3) RETURNING "id"
+ERROR:  null value in column "name" violates not-null constraint
+DETAIL:  Failing row contains (3, null, 2017-05-03 13:08:21.123669, 2017-05-03 13:08:21.123669, 1).
+STATEMENT:  INSERT INTO "spree_taxonomies" ("created_at", "updated_at", "position") VALUES ($1, $2, $3) RETURNING "id"
+ERROR:  null value in column "name" violates not-null constraint
+DETAIL:  Failing row contains (4, null, 2017-05-03 13:13:58.710356, 2017-05-03 13:13:58.710356, 1).
+STATEMENT:  INSERT INTO "spree_taxonomies" ("created_at", "updated_at", "position") VALUES ($1, $2, $3) RETURNING "id"
+ERROR:  null value in column "name" violates not-null constraint
+DETAIL:  Failing row contains (5, null, 2017-05-03 13:14:17.587765, 2017-05-03 13:14:17.587765, 1).
+STATEMENT:  INSERT INTO "spree_taxonomies" ("created_at", "updated_at", "position") VALUES ($1, $2, $3) RETURNING "id"
+FATAL:  database "classic_development" does not exist
+ERROR:  null value in column "name" violates not-null constraint
+DETAIL:  Failing row contains (1, null, 2017-05-03 13:18:05.629622, 2017-05-03 13:18:05.629622, 1).
+STATEMENT:  INSERT INTO "spree_taxonomies" ("created_at", "updated_at", "position") VALUES ($1, $2, $3) RETURNING "id"
+ERROR:  null value in column "name" violates not-null constraint
+DETAIL:  Failing row contains (2, null, 2017-05-03 13:20:17.35208, 2017-05-03 13:20:17.35208, 1).
+STATEMENT:  INSERT INTO "spree_taxonomies" ("created_at", "updated_at", "position") VALUES ($1, $2, $3) RETURNING "id"
+ERROR:  null value in column "name" violates not-null constraint
+DETAIL:  Failing row contains (3, null, 2017-05-03 13:20:28.015812, 2017-05-03 13:20:28.015812, 1).
+STATEMENT:  INSERT INTO "spree_taxonomies" ("created_at", "updated_at", "position") VALUES ($1, $2, $3) RETURNING "id"
