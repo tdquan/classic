@@ -52,3 +52,9 @@ ERROR:  column spree_calculators.deleted_at does not exist at character 62
 STATEMENT:  SELECT  "spree_calculators".* FROM "spree_calculators" WHERE "spree_calculators"."deleted_at" IS NULL ORDER BY "spree_calculators"."id" ASC LIMIT $1
 ERROR:  column spree_addresses.user_id does not exist at character 57
 STATEMENT:  SELECT "spree_addresses".* FROM "spree_addresses" WHERE "spree_addresses"."user_id" = $1 AND "spree_addresses"."deleted_at" IS NULL ORDER BY updated_at DESC
+ERROR:  update or delete on table "users" violates foreign key constraint "fk_rails_732f6628c4" on table "wallets"
+DETAIL:  Key (id)=(16) is still referenced from table "wallets".
+STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1
+ERROR:  update or delete on table "users" violates foreign key constraint "fk_rails_732f6628c4" on table "wallets"
+DETAIL:  Key (id)=(16) is still referenced from table "wallets".
+STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1

@@ -1,5 +1,3 @@
-BLAH
-
 <% @body_id = 'cart' %>
 <div data-hook="cart_container" class="container-fluid">
   <h1><%= Spree.t(:shopping_cart) %></h1>
@@ -20,20 +18,18 @@ BLAH
 
           <div class="row">
             <!-- COUPON CODE -->
-            <div class='col-md-4 navbar-form coupon-code'  data-hook='coupon_code'>
-              <div class="row">
-                <div class="col-xs-6">
-                  <%= order_form.text_field :coupon_code, size: '30', class: 'form-control', placeholder: 'Coupon code' %>
-                </div>
-                <div class="col-xs-6">
+            <div class='col-md-4 navbar-form pull-left coupon-code'  data-hook='coupon_code'>
+              <div class="input-group">
+                <%= order_form.text_field :coupon_code, size: '30', class: 'form-control', placeholder: 'Coupon code' %>
+                <span class="input-group-btn">
                   <%= button_tag Spree.t(:coupon_code_apply), class: 'btn btn-default' %>
-                </div>
+                </span>
               </div>
             </div>
 
             <!-- CHECKOUT BUTTONS -->
-            <div class="col-md-3 navbar-form float-right cart-buttons" data-hook="cart_buttons">
-              <div class="form-group">
+            <div class="col-md-3 navbar-form pull-right cart-buttons" data-hook="cart_buttons">
+              <div class="text-center">
                 <%= button_tag class: 'btn btn-default', id: 'update-button' do %>
                   <%= Spree.t(:update) %>
                 <% end %>
@@ -49,16 +45,16 @@ BLAH
 
     <hr>
 
-    <div class="row">
-      <div id="empty-cart" class="col-md-6 pull-left" data-hook>
-        <%= form_tag empty_cart_path, method: :put do %>
-          <p id="clear_cart_link" data-hook>
-            <%= submit_tag Spree.t(:empty_cart), class: 'btn btn-primary' %>
-            <%#= Spree.t(:or) %>
-            <%= link_to Spree.t(:continue_shopping), products_path, class: 'btn btn-default continue' %>
-          </p>
-        <% end %>
-      </div>
+    <div id="empty-cart" class="row" data-hook>
+      <%= form_tag empty_cart_path, method: :put, class: "col-md-6 pull-left navbar-form cart-buttons" do %>
+        <p id="clear_cart_link" class="text-center" data-hook>
+          <%= link_to Spree.t(:continue_shopping), products_path, class: 'btn btn-primary continue' %>
+          <%#= Spree.t(:or) %>
+          <br class="visible-xs">
+          <br class="visible-xs">
+          <%= submit_tag Spree.t(:empty_cart), class: 'btn btn-default' %>
+        </p>
+      <% end %>
     </div>
 
   <% end %>

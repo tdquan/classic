@@ -23,7 +23,7 @@ table {
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 767px) {
   .coupon-code, .cart-buttons {
     width: 100%;
     float: none;
@@ -31,6 +31,11 @@ table {
 
   #empty-cart {
     padding: 0;
+  }
+
+  .navbar-form {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 

@@ -29,16 +29,20 @@
       <%= hidden_field_tag "variant_id", @product.master.id %>
     <% end %>
 
+    <!-- PRICE AND ADD TO CART -->
+
     <% if @product.price_in(current_currency) && !@product.price.nil? %>
       <div data-hook="product_price" class="col-md-5">
         <div id="product-price">
-          <h6 class="product-section-title"><%= Spree.t(:price) %></h6>
           <div>
+            <b class="product-section-title"><%= Spree.t(:price) %> : </b>
             <span class="lead price selling" itemprop="price">
               <%= display_price(@product) %>
             </span>
-            <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
+            <!-- <span itemprop="priceCurrency" content="<%#= @product.currency %>"></span> -->
           </div>
+
+          <br>
 
           <% if @product.master.can_supply? %>
             <link itemprop="availability" href="https://schema.org/InStock" />
@@ -59,10 +63,11 @@
                 <% end %>
               </span>
             </div>
-            <%= button_tag class: 'btn btn-primary btn-buy' do %>
-              <%= Spree.t('buy') %>
-            <% end %>
           </div>
+          <br>
+          <%= button_tag class: 'btn btn-primary btn-buy' do %>
+            <%= Spree.t('buy') %>
+          <% end %>
         <% end %>
       </div>
     <% else %>
