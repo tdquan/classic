@@ -9,6 +9,9 @@
 
   .navbar-header {
     width: 15%;
+    .locale-choice-xs {
+      display: none;
+    }
     @media screen and (max-width: 767px) {
       width: auto;
     }
@@ -159,5 +162,18 @@
 
   #navbar-search-bar {
     padding: 0 15px;
+  }
+  #spree-header {
+    .navbar-header {
+      .locale-choice-xs {
+        display: block;
+        float: right;
+        margin: 3px 15px;
+        position: relative;
+        height: 50px;
+        line-height: 50px;
+        vertical-align: middle;
+      }
+    }
   }
 }
