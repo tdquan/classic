@@ -17,4 +17,6 @@
 
 textarea.form-control {
       display: block !important;
+      visibility: visible !important;
+
 }
