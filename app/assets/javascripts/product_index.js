@@ -5,11 +5,17 @@ $(document).on('ready', function() {
  //   }, function(){
  //     $(".panel-body", this).css("display", "none");
  // });
+  $(".product-list-item img").height($(".product-list-item img").width());
+
+  window.onresize = function(event) {
+    $(".product-list-item img").height($(".product-list-item img").width());
+  };
 
   // INFINITE SCROLLING
-  return $("#products").infinitescroll({
+  $("#products").infinitescroll({
     navSelector: "ul.pagination",
     nextSelector: "ul.pagination a[rel=next]",
     itemSelector: "#content .product-list-item"
   });
 });
+
