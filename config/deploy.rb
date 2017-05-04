@@ -38,5 +38,5 @@ namespace :deploy do
 end
 
 after :deploy, "deploy:create_symlink"
-after :deploy, "deploy:restart_unicorn"
+# after :deploy, "deploy:restart_unicorn"
 after :deploy, "deploy:restart", "deploy:cleanup"
