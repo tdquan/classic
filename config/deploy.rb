@@ -33,7 +33,6 @@ namespace :deploy do
       execute "ps -ef | grep classic | grep '[u]nicorn master' | awk '{print $2}' | xargs kill -9"
       execute "export SECRET_KEY_BASE=$(env | grep SECRET_KEY_BASE= | cut -d '='' -f2)"
       execute "/home/classic/.rbenv/shims/unicorn -c ~/staging/current/config/unicorn.rb -E production -D"
-      execute "bundle exec unicorn -c /home/classic/staging/current/config/unicorn.rb -E production -D"
     end
   end
 end
