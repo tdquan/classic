@@ -14,3 +14,7 @@
 .navbar-inverse {
   background-color: #232323;
 }
+
+textarea.form-control {
+      display: block !important;
+}
