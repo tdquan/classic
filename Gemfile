@@ -26,7 +26,7 @@ gem 'kaminari'
 
 ## text editor
 gem 'spree_editor', github: 'spree-contrib/spree_editor'
-
+gem 'tinymce-rails-langs'
 # Translation
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: 'master'
 # gem 'globalize', github: 'globalize/globalize', branch: 'master'
