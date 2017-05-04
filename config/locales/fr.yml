@@ -531,6 +531,10 @@ fr:
         one: Zone
         other: Zones
   devise:
+    registrations:
+      spree_user:
+        signed_up: Vous êtes désormais enregistré
+
     sessions:
       spree_user:
         signed_out: Vous êtes désormais déconnecté.
