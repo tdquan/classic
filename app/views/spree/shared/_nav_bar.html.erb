@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="locale-choice locale-choice-xs">
-        <%= link_to "FR", "/locale/set?locale=fr" %>&nbsp;&nbsp;/&nbsp;&nbsp;<%= link_to "EN", "/locale/set?locale=en" %>
+        <%= link_to "FR", "/locale/set?locale=fr", class: "fr" %>&nbsp;&nbsp;/&nbsp;&nbsp;<%= link_to "EN", "/locale/set?locale=en", class: "en" %>
       </span>
       <figure id="logo" class="navbar-brand" data-hook>
         <%= logo %>
@@ -49,7 +49,7 @@
           </ul>
         </li>
         <li class="locale-choice hidden-xs">
-          <%= link_to "FR", "/locale/set?locale=fr" %>/<%= link_to "EN", "/locale/set?locale=en" %>
+          <%= link_to "FR", "/locale/set?locale=fr", class: "fr" %>/<%= link_to "EN", "/locale/set?locale=en", class: "en" %>
         </li>
         <script>Spree.fetch_cart()</script>
       </ul>

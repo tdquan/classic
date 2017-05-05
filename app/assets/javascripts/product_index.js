@@ -1,4 +1,5 @@
 $(document).on('ready', function() {
+
   // PRODUCT LIST BOX RESIZE TO SQUARE
   $(".product-list-item img").height($(".product-list-item img").width());
 
@@ -7,7 +8,7 @@ $(document).on('ready', function() {
   };
 
 
-  // ----------------- // -------------------//
+  /** -------------------------------------------------------------- **/
 
 
   // INFINITE SCROLLING
@@ -17,7 +18,7 @@ $(document).on('ready', function() {
     itemSelector: "#content .product-list-item"
   });
 
-  // ----------------- // -------------------//
+  /** -------------------------------------------------------------- **/
 
   // NAVBAR ACTIVE TAB
   if ($('body').attr('class').includes('taxons show')) {
@@ -35,5 +36,10 @@ $(document).on('ready', function() {
       $("a[href='/t/boutiques'").addClass("active");
     }
   }
+
+  /** -------------------------------------------------------------- **/
+
+  // NAVBAR CURRENT LOCALE
+  $("a[class=" + Spree.url_params["locale"] + "]").css({"font-weight": "bold"});
 });
 
