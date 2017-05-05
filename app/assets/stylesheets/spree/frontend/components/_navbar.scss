@@ -77,7 +77,7 @@
       padding-top: 0;
       padding-bottom: 0;
       border-bottom: 1px solid transparent;
-      &:hover, &:focus {
+      &:hover, &:focus, &.active {
         border-color: $brand-primary;
       }
       &.dropdown-item {
