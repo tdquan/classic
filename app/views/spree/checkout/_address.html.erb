@@ -32,13 +32,16 @@
   </div>
 </div>
 
-<div class="well text-right form-buttons" data-hook="buttons">
-  <%= submit_tag Spree.t(:save_and_continue), class: 'btn btn-lg btn-form' %>
+<div class="well form-buttons row text-center" data-hook="buttons">
+  <div class="col-md-6">
+    <%= submit_tag Spree.t(:save_and_continue), class: 'btn btn-lg btn-form' %>
+  </div>
   <% if try_spree_current_user %>
-    <span data-hook="save_user_address">
+    <br>
+    <div class="col-md-6" data-hook="save_user_address">
       &nbsp; &nbsp;
       <%= check_box_tag 'save_user_address', '1', try_spree_current_user.respond_to?(:persist_order_address) %>
       <%= label_tag :save_user_address, Spree.t(:save_my_address) %>
-    </span>
+    </div>
   <% end %>
 </div>
