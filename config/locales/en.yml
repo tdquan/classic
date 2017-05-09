@@ -281,6 +281,9 @@ en:
       spree/zone:
         one: Zone
         other: Zones
+
+  all_artists: All artists
+
   devise:
     confirmations:
       confirmed: Your account was successfully confirmed. You are now signed in.
@@ -1338,7 +1341,7 @@ en:
     zones: Zones
     your_account: Your account
     signup: Signup
-    Artistes: Artistes
+    Artistes: Artists
     Ouvrages: Books
     Projets: Projects
     Boutiques: Shop

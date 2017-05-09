@@ -184,3 +184,12 @@
     }
   }
 }
+
+@media (min-width: 768px) {
+  .dropdown-menu.dropdown-menu-center {
+    left: 50%;
+    right: auto;
+    text-align: center;
+    transform: translate(-50%, 0);
+  }
+}

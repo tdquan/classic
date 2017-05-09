@@ -7,6 +7,8 @@ fr:
     successfully_removed: L'adresse a bien été supprimée
     no_shipping_addresses_on_file: Aucune adresse enregistrée
 
+  all_artists: Tous les artistes
+
   date:
     abbr_day_names:
       - dim
