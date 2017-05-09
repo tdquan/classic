@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  HOST= "http://www.classic-paris.com/"
   # Code is not reloaded between requests.
   config.cache_classes = true
 
