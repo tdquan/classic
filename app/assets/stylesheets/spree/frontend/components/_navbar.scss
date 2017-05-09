@@ -83,6 +83,9 @@
       &.dropdown-item {
         line-height: 30px;
         text-align: center;
+        &:hover, &:focus, &.active {
+          border-bottom: 1px solid transparent;
+        }
       }
     }
   }
@@ -182,5 +185,14 @@
         vertical-align: middle;
       }
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .dropdown-menu.dropdown-menu-center {
+    left: 50%;
+    right: auto;
+    text-align: center;
+    transform: translate(-50%, 0);
   }
 }

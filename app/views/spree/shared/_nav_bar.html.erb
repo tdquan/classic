@@ -19,7 +19,21 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-right" id="navbar-classic">
       <ul class="nav navbar-nav navbar-right">
-        <% Spree::Taxonomy.all.each do |taxonomy| %>
+        <!-- ARTISTES DROPDOWN -->
+        <li class="nav-taxons">
+          <a href="#" class="breadcrumbs subtaxon-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= Spree.t(:Artistes) %><span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-center">
+            <li><%= link_to Spree.t(:all_artists), root_path, class: 'dropdown-item' %><li>
+            <% taxons = Spree::Taxonomy.find_by_name("Artistes").taxons.all.reject { |t| t.name == "Artistes" }.each do |taxon| %>
+              <% if taxon %>
+                <li><%= link_to Spree.t(taxon.name.to_sym), seo_url(taxon), class: 'dropdown-item' %><li>
+              <% end %>
+            <% end %>
+          </ul>
+        </li>
+
+        <!-- NORMAL TAXONOMIES -->
+        <% Spree::Taxonomy.all.reject { |t| t.name == "Artistes" }.each do |taxonomy| %>
           <% taxon = taxonomy.taxons.first %>
           <li class="nav-taxons">
             <div class="taxon" data-hook="taxon">
@@ -27,15 +41,21 @@
             </div>
           </li>
         <% end %>
+
+        <!-- SEARCH BAR -->
         <li id="navbar-search-bar" data-hook>
           <%= render partial: 'spree/shared/search' %>
         </li>
+
+        <!-- CART -->
         <li id="link-to-cart" class="nav-taxons" data-hook>
           <noscript>
             <%= link_to Spree.t(:cart), '/cart' %>
           </noscript>
           &nbsp;
         </li>
+
+        <!-- ACCOUNT/LOGIN/LOGOUT LINKS -->
         <li id="navbar-account-link" class="nav-taxons">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= Spree.t(:your_account) %><span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -48,6 +68,8 @@
             <% end %>
           </ul>
         </li>
+
+        <!-- LOCALE -->
         <li class="locale-choice hidden-xs">
           <%= link_to "FR", "/locale/set?locale=fr", class: "fr" %>/<%= link_to "EN", "/locale/set?locale=en", class: "en" %>
         </li>

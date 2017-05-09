@@ -665,6 +665,7 @@ fr:
     all: Tous
     all_adjustments_closed: Tous les ajustements ont été fermé avec succès!
     all_adjustments_opened: Tous les ajustements ont été ouvert avec succès!
+    all_artists: Tous les artistes
     all_departments: Tous les départements
     all_items_have_been_returned: Tous les articles ont été retournés
     allow_ssl_in_development_and_test: Permettre l'utilisation du SSL en mode développement et test
