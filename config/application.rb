@@ -35,9 +35,6 @@ module Classic
       generate.assets false
     end
 
-    def default_url_options
-      { host: ENV['HOST'] || 'localhost:3000' }
-    end
 
     config.i18n.default_locale = :fr
     # Settings in config/environments/* take precedence over those specified here.
