@@ -282,8 +282,6 @@ en:
         one: Zone
         other: Zones
 
-  all_artists: All artists
-
   devise:
     confirmations:
       confirmed: Your account was successfully confirmed. You are now signed in.
@@ -412,6 +410,7 @@ en:
     all: All
     all_adjustments_closed: All adjustments successfully closed!
     all_adjustments_opened: All adjustments successfully opened!
+    all_artists: All artists
     all_departments: All departments
     all_items_have_been_returned:
     allow_ssl_in_development_and_test: Allow SSL to be used when in development and test modes
