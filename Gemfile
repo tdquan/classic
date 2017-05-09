@@ -45,6 +45,7 @@ group :development, :test do
   gem 'spring'
   gem 'listen', '~> 3.0.5'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # gem 'capistrano-secrets-yml', '~> 1.0.0'
 end
 
 group :production do

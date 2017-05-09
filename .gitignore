@@ -8,3 +8,4 @@ public/assets
 public/spree/*
 # Ignore application configuration
 /config/application.yml
+# /config/secrets.yml

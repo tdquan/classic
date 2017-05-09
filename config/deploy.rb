@@ -32,7 +32,7 @@ namespace :deploy do
     on roles :all do
       execute "ps -ef | grep classic | grep '[u]nicorn master' | awk '{print $2}' | xargs kill -9"
       within "~/staging/current/" do
-        execute "export SECRET_KEY_BASE=$(rake secret)"
+        execute "export SECRET_KEY_BASE=$(bundle exec rake secret)"
       end
       execute "/home/classic/.rbenv/shims/unicorn -c ~/staging/current/config/unicorn.rb -E production -D"
     end
@@ -40,5 +40,5 @@ namespace :deploy do
 end
 
 after :deploy, "deploy:create_symlink"
-# after :deploy, "deploy:restart_unicorn"
-after :deploy, "deploy:restart", "deploy:cleanup"
+after :deploy, "deploy:restart_unicorn"
+after "deploy:restart", "deploy:cleanup"
