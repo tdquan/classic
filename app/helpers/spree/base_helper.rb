@@ -107,7 +107,7 @@ module Spree
             end
           end
         else
-          if controller_name == "products" && action_name == "show"
+          if controller_name == "products" && action_name == "show" && product.images.count > 1
             create_product_image_tag(product.images[1], product, options, style)
           else
             create_product_image_tag(product.images.first, product, options, style)
