@@ -24,16 +24,16 @@ $(document).on('ready', function() {
   if ($('body').attr('class').includes('taxons show')) {
     if (window.location.href.includes('/t/artistes')) {
       $("a.subtaxon-title").removeClass("active");
-      $("a[href='/t/artistes'").addClass("active");
+      $("a.subtaxon-title[href='#'").addClass("active");
     } else if (window.location.href.includes('/t/ouvrages')) {
       $("a.subtaxon-title").removeClass("active");
-      $("a[href='/t/ouvrages'").addClass("active");
+      $("a[href='/t/ouvrages']").addClass("active");
     } else if (window.location.href.includes('/t/projets')) {
       $("a.subtaxon-title").removeClass("active");
-      $("a[href='/t/projets'").addClass("active");
+      $("a[href='/t/projets']").addClass("active");
     } else if (window.location.href.includes('/t/boutiques')) {
       $("a.subtaxon-title").removeClass("active");
-      $("a[href='/t/boutiques'").addClass("active");
+      $("a[href='/t/boutiques']").addClass("active");
     }
   }
 

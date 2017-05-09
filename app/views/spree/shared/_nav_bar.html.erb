@@ -20,7 +20,7 @@
     <div class="collapse navbar-collapse navbar-right" id="navbar-classic">
       <ul class="nav navbar-nav navbar-right">
         <!-- ARTISTES DROPDOWN -->
-        <li id="navbar-account-link" class="nav-taxons">
+        <li class="nav-taxons">
           <a href="#" class="breadcrumbs subtaxon-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= Spree.t(:Artistes) %><span class="caret"></span></a>
           <ul class="dropdown-menu dropdown-menu-center">
             <li><%= link_to Spree.t(:all_artists), seo_url(Spree::Taxonomy.find_by_name("Artistes").taxons.first), class: 'dropdown-item' %><li>

@@ -83,6 +83,9 @@
       &.dropdown-item {
         line-height: 30px;
         text-align: center;
+        &:hover, &:focus, &.active {
+          border-bottom: 1px solid transparent;
+        }
       }
     }
   }
