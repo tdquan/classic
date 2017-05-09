@@ -1,11 +1,12 @@
 <!-- Meta for Facebook -->
 <% content_for :meta_title, @product.name %>
-<% content_for :meta_description, @product.description %>
+<% content_for :meta_description, line_item_description_text(line_item.description) %>
 
 <% content_for :meta_image, large_image(@product, itemprop: "image", class: "product-show-image") %>
 
 <% @body_id = 'product-details' %>
 
+<#% raise %>
 
 <% cache cache_key_for_product do %>
   <div data-hook="product_show" itemscope itemtype="https://schema.org/Product">
