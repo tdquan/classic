@@ -34,6 +34,7 @@ gem 'spree_address_book', github: 'spree-contrib/spree_address_book'
 #gem 'activemodel-serializers-xml'
 #gem 'spree_globalize', github: 'spree-contrib/spree_globalize', branch: 'master'
 
+gem "letter_opener", group: :development
 
 group :development, :test do
   gem 'binding_of_caller'

@@ -1,9 +1,8 @@
 class ClassicMailer < ActionMailer::Base
-  default from: 'classic@classic.com'
+  default from: 'contact@classic-paris.com'
 
     def welcome(user)
       @user = user
-      mail(to: @user.email, subject: 'Welcome to Classic!')
+      mail(to: @user.email, subject: 'Bienvenu sur Classic!')
     end
-
 end
