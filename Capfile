@@ -19,8 +19,8 @@ require "capistrano/rails"
 require "capistrano/bundler"
 require "capistrano/rbenv"
 require "capistrano3/unicorn"
+require "capistrano/secrets_yml"
 
-require "capistrano/scm/git"
 install_plugin Capistrano::SCM::Git
 
 # Include tasks from other gems included in your Gemfile

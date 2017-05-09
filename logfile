@@ -58,3 +58,7 @@ STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1
 ERROR:  update or delete on table "users" violates foreign key constraint "fk_rails_732f6628c4" on table "wallets"
 DETAIL:  Key (id)=(16) is still referenced from table "wallets".
 STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1
+LOG:  database system was shut down at 2017-05-06 04:50:07 CEST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
