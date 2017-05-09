@@ -3,8 +3,6 @@
 <% content_for :meta_description, strip_tags(@product.description.gsub('&nbsp;', ' ').squish) if @product.description.present? %>
 <% content_for :meta_image, large_image(@product, itemprop: "image") if @product.images[0].present? %>
 
-
-
 <% @body_id = 'product-details' %>
 
 <% cache cache_key_for_product do %>
