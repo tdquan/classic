@@ -1,7 +1,8 @@
 <!-- Meta for Facebook -->
 <% content_for :meta_title, @product.name %>
 <% content_for :meta_description, @product.description %>
-<% content_for :meta_image, @product.images[0].attachment_file_name %>
+
+<% content_for :meta_image, large_image(@product, itemprop: "image", class: "product-show-image") %>
 
 <% @body_id = 'product-details' %>
 
