@@ -19,7 +19,7 @@ require "capistrano/rails"
 require "capistrano/bundler"
 require "capistrano/rbenv"
 require "capistrano3/unicorn"
-require "capistrano/secrets_yml"
+# require "capistrano/secrets_yml"
 
 install_plugin Capistrano::SCM::Git
 
