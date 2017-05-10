@@ -1,67 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>Votre demande n’a pu aboutir (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8">
   <style>
-  body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
-
-  div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
-
-  div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-
-  h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .wrapper {
+      width: 100vw;
+      height: 100vh;
+    }
+    .text {
+      text-align: center;
+      margin-top: 20vh;
+    }
+    img {
+      margin: 5px;
+      width: 200px;
+    }
+    a {
+      display: inline-block;
+      font-size: 20px;
+      color: #fff;
+      background-color: #232323;
+      border-color: #161616;
+      padding: 12px 24px;
+      border-radius: 2px;
+      margin-top: 50px;
+      text-decoration: none;
+    }
+    a:hover {
+      cursor: pointer;
+      text-decoration: none;
+    }
   </style>
 </head>
 
 <body>
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+  <div class="wrapper">
+    <img src="classic.png" alt="logo classic">
+    <div class="text">
+      <h1>Votre demande n’a pu aboutir (404)</h1>
+      <a href="/">Page d'accueil</a>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
