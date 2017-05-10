@@ -7,7 +7,6 @@ class Spree::UsersController < Spree::StoreController
 
   def new
       super
-      ClassicMailer.welcome(self).deliver_now
     end
 
   def show
@@ -17,11 +16,10 @@ class Spree::UsersController < Spree::StoreController
   def create
     @user = Spree::User.new(user_params)
     if @user.save
-
+      raise
       if current_order
         session[:guest_token] = nil
       end
-
       redirect_back_or_default(root_url)
     else
       render :new

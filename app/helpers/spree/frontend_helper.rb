@@ -22,9 +22,8 @@ module Spree
 
     def checkout_progress(numbers: false)
       states = @order.checkout_steps
-      nb = 0
       items = states.each_with_index.map do |state, i|
-        text = nb.to_s
+        text = Spree.t("order_state.#{state}").titleize
         text.prepend("#{i.succ}. ") if numbers
 
         css_classes = []
@@ -47,7 +46,6 @@ module Spree
         else
           content_tag('li', content_tag('a', text), class: css_classes.join(' '))
         end
-        nb += 1
       end
       content_tag('ul', raw(items.join("\n")), class: 'progress-steps nav nav-pills nav-justified', id: "checkout-step-#{@order.state}")
     end
