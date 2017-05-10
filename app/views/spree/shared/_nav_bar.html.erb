@@ -47,14 +47,6 @@
           <%= render partial: 'spree/shared/search' %>
         </li>
 
-        <!-- CART -->
-        <li id="link-to-cart" class="nav-taxons" data-hook>
-          <noscript>
-            <%= link_to Spree.t(:cart), '/cart' %>
-          </noscript>
-          &nbsp;
-        </li>
-
         <!-- ACCOUNT/LOGIN/LOGOUT LINKS -->
         <li id="navbar-account-link" class="nav-taxons">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= Spree.t(:your_account) %><span class="caret"></span></a>
@@ -68,6 +60,19 @@
             <% end %>
           </ul>
         </li>
+
+        <li>
+          <a href="/contact">Contact</a>
+        </li>
+
+        <!-- CART -->
+        <li id="link-to-cart" class="nav-taxons" data-hook>
+          <noscript>
+            <%= link_to Spree.t(:cart), '/cart' %>
+          </noscript>
+          &nbsp;
+        </li>
+
 
         <!-- LOCALE -->
         <li class="locale-choice hidden-xs">
