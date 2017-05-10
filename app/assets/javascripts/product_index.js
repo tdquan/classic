@@ -7,12 +7,10 @@ $(document).on('ready', function() {
     $(".product-list-item img").height($(".product-list-item img").width());
   };
 
-
   /** -------------------------------------------------------------- **/
 
-
-  // INFINITE SCROLLING
-  $("#products").infinitescroll({
+    // INFINITE SCROLLING
+  $(".home.index #products").infinitescroll({
     navSelector: "ul.pagination",
     nextSelector: "ul.pagination a[rel=next]",
     itemSelector: "#content .product-list-item"
