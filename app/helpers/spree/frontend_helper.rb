@@ -62,14 +62,14 @@ module Spree
     end
 
     def link_to_cart(text = nil)
-      text = text ? h(text) : Spree.t('cart')
+      # text = text ? h(text) : Spree.t('cart')
       css_class = nil
 
       if simple_current_order.nil? or simple_current_order.item_count.zero?
-        text = "<span class='fa fa-shopping-cart'></span> #{text}:  <span class='badge black-bg'>#{Spree.t('empty')}</span>"
+        text = "<span class='fa fa-shopping-cart'></span>  <span class='badge black-bg'>#{Spree.t('empty')}</span>"
         css_class = 'empty'
       else
-        text = "<span class='fa fa-shopping-cart'></span> #{text}:  <span class='amount badge black-bg'>#{simple_current_order.display_total.to_html}</span>"
+        text = "<span class='fa fa-shopping-cart'></span>  <span class='amount badge black-bg'>#{simple_current_order.item_count}</span>"
         css_class = 'full'
       end
 
