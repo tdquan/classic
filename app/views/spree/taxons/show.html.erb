@@ -1,4 +1,21 @@
-<h1 class="taxon-title"><%= Spree.t(@taxon.name.to_sym) %></h1>
+<h1 class="taxon-title">
+  <%= Spree.t(@taxon.name.to_sym) %>
+  <% if @taxon == @taxon.taxonomy.taxons.first %> <!--  Check if this is the master taxon aka "All artists" -->
+    <a href="#artiste-dropdown-list" class="fa fa-caret-down" role="button" data-toggle="collapse" aria-expanded="true" aria-controls="artiste-dropdown-list"></a>
+  <% end %>
+</h1>
+
+<% unless params[:keywords].present? %>
+  <div class="collapse" role="tabpanel" id="artiste-dropdown-list" aria-labelledby="artiste-dropdown-list" aria-expanded="true" data-hook="taxon_children">
+    <% cache [I18n.locale, @taxon] do %>
+      <div class="artiste-dropdown-panel">
+        <% @taxon.children.each do |artiste| %>
+          <%= link_to artiste.name, seo_url(artiste), class: "list-group-item" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 
 <% content_for :sidebar do %>
   <div data-hook="taxon_sidebar_navigation">
@@ -6,15 +23,16 @@
     <%= render partial: 'spree/shared/filters' if @taxon.leaf? %>
   </div>
 <% end %>
+<br>
 
 <div data-hook="taxon_products">
   <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
 </div>
 
-<% unless params[:keywords].present? %>
-  <div data-hook="taxon_children">
-    <% cache [I18n.locale, @taxon] do %>
-      <%= render partial: 'taxon', collection: @taxon.children %>
-    <% end %>
-  </div>
-<% end %>
+<%# unless params[:keywords].present? %>
+  <!-- <div data-hook="taxon_children"> -->
+    <%# cache [I18n.locale, @taxon] do %>
+      <%#= render partial: 'taxon', collection: @taxon.children %>
+    <%# end %>
+  <!-- </div> -->
+<%# end %>
