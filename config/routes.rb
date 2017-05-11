@@ -10,7 +10,7 @@ Rails.application.routes.draw do
           root to: 'pages#home'
 
   Spree::Core::Engine.add_routes do
-    get '/contact',        to: 'home#contact'
+    get '/contact',        to: 'pages#contact'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
