@@ -9,4 +9,4 @@ public/spree/*
 # Ignore application configuration
 /config/application.yml
 # /config/secrets.yml
-/public/ckeditor_assets
+
