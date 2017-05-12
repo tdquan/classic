@@ -25,6 +25,8 @@ namespace :deploy do
       execute "rm -rf /home/classic/staging/current/public/spree/products/*"
       execute "mkdir /home/classic/staging/current/public/spree"
       execute "ln -nfs /home/classic/staging/shared/spree/products /home/classic/staging/current/public/spree/products"
+
+      execute"mv ~/staging/current/public/assets/tinymce/langs/fr_FR.js ~/staging/current/public/assets/tinymce/langs/fr.js"
     end
   end
 
