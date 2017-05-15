@@ -37,6 +37,7 @@ namespace :deploy do
       execute "ps -ef | grep classic | grep '[u]nicorn master' | awk '{print $2}' | xargs kill -9"
       within "~/staging/current/" do
         execute "export SECRET_KEY_BASE=$(bundle exec rake secret)"
+        execute "bundle exec unicorn -c /home/classic/staging/current/config/unicorn.rb -E production -D"
       end
     end
   end
