@@ -25,7 +25,7 @@ namespace :deploy do
       execute "rm -rf /home/classic/staging/current/public/spree/products/*"
       execute "mkdir /home/classic/staging/current/public/spree"
       execute "ln -nfs /home/classic/staging/shared/spree/products /home/classic/staging/current/public/spree/products"
-      execute "ln -nfs /home/classic/staging/shared/spree/ckeditor_assets/home/classic/staging/current/public/spree/ckeditor_assets"
+      execute "ln -nfs /home/classic/staging/shared/ckeditor_assets /home/classic/staging/current/public/ckeditor_assets"
 
       execute"mv ~/staging/current/public/assets/tinymce/langs/fr_FR.js ~/staging/current/public/assets/tinymce/langs/fr.js"
     end
