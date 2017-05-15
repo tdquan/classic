@@ -39,7 +39,6 @@ namespace :deploy do
       within "~/staging/current/" do
         execute "export SECRET_KEY_BASE=$(bundle exec rake secret)"
       end
-      execute "bundle exec unicorn -c config/unicorn/staging.rb -E production -D"
     end
   end
 end
