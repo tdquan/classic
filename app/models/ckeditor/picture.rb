@@ -1,6 +1,6 @@
 class Ckeditor::Picture < Ckeditor::Asset
   has_attached_file :data,
-                    url: '/ckeditor_assets/pictures/:id/:style_:basename.:extension',
+                    url: PATH_TO_IMAGE_EDITOR,
                     path: PATH_TO_IMAGE_EDITOR,
                     styles: { content: '800>', thumb: '118x100#' }
 
