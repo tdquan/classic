@@ -260,7 +260,7 @@ fr:
         checkout_complete: Votre commande à été reçu
         completed_at: Terminé à
         considered_risky: Considérée à risque
-        coupon_code: Coupon de promotion
+        coupon_code: Code de promotion
         created_at: Date d'achat
         email: Email
         ip_address: Adresse IP
@@ -726,7 +726,7 @@ fr:
     cannot_set_shipping_method_without_address: La méthode d'expédition ne peut être définie tant que les données du client ne sont pas spécifiées
     capture: accepté
     capture_events: Événements d'acceptation
-    card_code: Code de la carte
+    card_code: Cryptogramme
     card_number: Numéro de carte
     card_type: Type de cate
     card_type_is: Le type de la carte est

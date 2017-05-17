@@ -23,6 +23,10 @@ table {
   }
 }
 
+span.region {
+  display: none;
+}
+
 @media (max-width: 767px) {
   .coupon-code, .cart-buttons {
     width: 100%;
