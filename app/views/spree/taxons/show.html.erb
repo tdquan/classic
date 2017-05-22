@@ -1,17 +1,19 @@
-<h1 class="taxon-title">
-  <%= Spree.t(@taxon.name.to_sym) %>
-  <% if @taxon.children.any? %> <!--  Check if this is the master taxon -->
-    <a href="#<%= @taxon.name %>-dropdown-list" class="fa fa-caret-down" role="button" data-toggle="collapse" aria-expanded="true" aria-controls="<%= @taxon.name %>-dropdown-list"></a>
-  <% end %>
-</h1>
+<!-- <h1 class="taxon-title"> -->
+  <%#= Spree.t(@taxon.name.to_sym) %>
+  <%# if @taxon.children.any? %> <!--  Check if this is the master taxon -->
+    <!-- <a href="#<%#= @taxon.name %>-dropdown-list" class="fa fa-caret-down" role="button" data-toggle="collapse" aria-expanded="true" aria-controls="<%#= @taxon.name %>-dropdown-list"></a> -->
+  <%# end %>
+<!-- </h1> -->
 
 <% unless params[:keywords].present? %>
-  <div class="collapse row" role="tabpanel" id="<%= @taxon.name %>-dropdown-list" aria-labelledby="<%= @taxon.name %>-dropdown-list" aria-expanded="true" data-hook="taxon_children">
+  <div class="collapse in row" role="tabpanel" id="<%= @taxon.name.downcase %>-dropdown-list" aria-labelledby="<%= @taxon.name.downcase %>-dropdown-list" aria-expanded="true" data-hook="taxon_children">
     <% cache [I18n.locale, @taxon] do %>
-      <div class="<%= @taxon.name %>-dropdown-panel">
+      <div class="<%= @taxon.name.downcase %>-dropdown-panel">
         <% @taxon.children.each do |t| %>
-          <%= link_to t.name, seo_url(t), class: "taxon-dropdown-list-item col-md-4" %>
+        <p class="col-md-3">
+          <%= link_to t.name, seo_url(t), class: "taxon-dropdown-list-item" %>
         <% end %>
+        </p>
       </div>
     <% end %>
   </div>
