@@ -19,6 +19,12 @@
   }
 }
 
-
+.product-title {
+  display: flex;
+  align-items: baseline;
+  .fb-share-button {
+    margin-left: 20px;
+  }
+}
 
 

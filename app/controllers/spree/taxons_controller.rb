@@ -13,8 +13,16 @@ module Spree
       return unless @taxon
 
       @searcher = build_searcher(params.merge(taxon: @taxon.id, include_images: true))
-      @products = @searcher.retrieve_products
+      @products = @searcher.retrieve_products.order({ created_at: :desc }).reverse
       @taxonomies = Spree::Taxonomy.includes(root: :children)
+
+
+      # if @taxon.name == "Artists" || "Projects" || "Shop"
+      #   @products = @products.sort_by  &:name
+      # else
+      #   @products = @products.sort_by  &:created_at
+      # end
+
     end
 
     private

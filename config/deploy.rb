@@ -25,6 +25,9 @@ namespace :deploy do
       execute "rm -rf /home/classic/staging/current/public/spree/products/*"
       execute "mkdir /home/classic/staging/current/public/spree"
       execute "ln -nfs /home/classic/staging/shared/spree/products /home/classic/staging/current/public/spree/products"
+      execute "ln -nfs /home/classic/staging/shared/ckeditor_assets /home/classic/staging/current/public/ckeditor_assets"
+
+      execute"mv ~/staging/current/public/assets/tinymce/langs/fr_FR.js ~/staging/current/public/assets/tinymce/langs/fr.js"
     end
   end
 
@@ -35,7 +38,6 @@ namespace :deploy do
       within "~/staging/current/" do
         execute "export SECRET_KEY_BASE=$(bundle exec rake secret)"
       end
-      execute "/home/classic/.rbenv/shims/unicorn -c ~/staging/current/config/unicorn.rb -E production -D"
     end
   end
 end

@@ -66,7 +66,7 @@ module Spree
       css_class = nil
 
       if simple_current_order.nil? or simple_current_order.item_count.zero?
-        text = "<span class='fa fa-shopping-cart'></span>  <span class='badge black-bg'>#{Spree.t('empty')}</span>"
+        text = "<span class='fa fa-shopping-cart'></span>  "
         css_class = 'empty'
       else
         text = "<span class='fa fa-shopping-cart'></span>  <span class='amount badge black-bg'>#{simple_current_order.item_count}</span>"

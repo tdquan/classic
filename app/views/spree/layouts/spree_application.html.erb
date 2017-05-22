@@ -13,6 +13,7 @@
     <meta property="og:title" content="<%= meta_title %>" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="fb:app_id" content="1218276804967684" />
     <meta property="og:image" content="<%= image_url(meta_image) %>" />
     <meta property="og:description" content="<%= meta_description %>" />
     <meta property="og:site_name" content="<%= meta_title %>" />
@@ -35,5 +36,25 @@
         <%= yield :templates %>
       </div>
     </div>
+
+    <!-- Facebook script -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1218276804967684',
+          xfbml      : true,
+          version    : 'v2.9'
+        });
+        FB.AppEvents.logPageView();
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/fr_FR/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
   </body>
 </html>
