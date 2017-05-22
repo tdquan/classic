@@ -8,7 +8,9 @@ module Spree
     def show
       @taxon = Taxon.friendly.find(params[:id])
       if @taxon.parent
-        @taxon = @taxon.parent
+        @taxon_parent = @taxon.parent
+      else
+        @taxon_parent = @taxon
       end
       return unless @taxon
 

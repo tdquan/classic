@@ -8,8 +8,8 @@
 <% unless params[:keywords].present? %>
   <div class="collapse in row" role="tabpanel" id="<%= @taxon.name.downcase %>-dropdown-list" aria-labelledby="<%= @taxon.name.downcase %>-dropdown-list" aria-expanded="true" data-hook="taxon_children">
     <% cache [I18n.locale, @taxon] do %>
-      <div class="<%= @taxon.name.downcase %>-dropdown-panel">
-        <% @taxon.children.each do |t| %>
+      <div class="taxon-dropdown-panel">
+        <% @taxon_parent.children.each do |t| %>
         <p class="col-md-3">
           <%= link_to t.name, seo_url(t), class: "taxon-dropdown-list-item" %>
         <% end %>
