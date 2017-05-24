@@ -1,7 +1,5 @@
 # config valid only for current version of Capistrano
 # lock "3.7.2"
-if
-
 set :application, "classic"
 set :repo_url, "git@git.cbm-groupe.fr:mld/classic.git"
 
@@ -18,5 +16,6 @@ set :rbenv_roles, :all # default value
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
+after :deploy, "deploy:create_symlink"
 after :deploy, "deploy:restart_unicorn"
 after "deploy:restart", "deploy:cleanup"

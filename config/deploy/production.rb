@@ -45,8 +45,6 @@ namespace :deploy do
   end
 end
 
-after :deploy, "deploy:create_symlink"
-
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.

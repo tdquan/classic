@@ -45,7 +45,6 @@ namespace :deploy do
   end
 end
 
-after :deploy, "deploy:create_symlink"
 
 
 # server-based syntax
