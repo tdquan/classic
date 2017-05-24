@@ -1,3 +1,26 @@
+role :app, %w{classic@188.166.36.67}
+role :web, %w{classic@188.166.36.67}
+role :db,  %w{classic@188.166.36.67}
+
+set :application, "classic"
+set :repo_url, "git@git.cbm-groupe.fr:mld/classic.git"
+
+set :rails_env, :production
+set :deploy_to, '/home/classic/production'
+set :deploy_to, '/home/classic/pre-prod'
+
+set :branch, 'master'
+
+set :ssh_options, {
+    forward_agent: true,
+    keys: %w(~/.ssh/id_rsa),
+    auth_methods: %w(password publickey),
+    user: fetch(:user),
+    password: 'classicpass'
+  }
+
+set :keep_releases, 5
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
