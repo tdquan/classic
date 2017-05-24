@@ -1,5 +1,6 @@
 # config valid only for current version of Capistrano
 # lock "3.7.2"
+if
 
 set :application, "classic"
 set :repo_url, "git@git.cbm-groupe.fr:mld/classic.git"
@@ -17,30 +18,6 @@ set :rbenv_roles, :all # default value
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
-namespace :deploy do
-
-  desc "Image symlink"
-  task :create_symlink do
-    on roles :all do
-      execute "rm -rf /home/classic/staging/current/public/spree/products/*"
-      execute "mkdir /home/classic/staging/current/public/spree"
-      execute "ln -nfs /home/classic/staging/shared/spree/products /home/classic/staging/current/public/spree/products"
-      execute "ln -nfs /home/classic/staging/shared/ckeditor_assets /home/classic/staging/current/public/ckeditor_assets"
-
-      execute"mv ~/staging/current/public/assets/tinymce/langs/fr_FR.js ~/staging/current/public/assets/tinymce/langs/fr.js"
-    end
-  end
-
-  desc "Killing old processes and restarting unicorn"
-  task :restart_unicorn do
-    on roles :all do
-      execute "ps -ef | grep classic | grep '[u]nicorn master' | awk '{print $2}' | xargs kill -9"
-      within "~/staging/current/" do
-        execute "export SECRET_KEY_BASE=$(bundle exec rake secret)"
-      end
-    end
-  end
-end
 
 after :deploy, "deploy:create_symlink"
 after :deploy, "deploy:restart_unicorn"

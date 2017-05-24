@@ -6,7 +6,6 @@ set :application, "classic"
 set :repo_url, "git@git.cbm-groupe.fr:mld/classic.git"
 
 set :rails_env, :production
-set :deploy_to, '/home/classic/production'
 set :deploy_to, '/home/classic/pre-prod'
 
 set :branch, 'master'
@@ -20,6 +19,31 @@ set :ssh_options, {
   }
 
 set :keep_releases, 5
+
+namespace :deploy do
+
+  desc "Image symlink"
+  task :create_symlink do
+    on roles :all do
+      execute "rm -rf /home/classic/pre-prod/current/public/spree/products/*"
+      execute "mkdir /home/classic/pre-prod/current/public/spree"
+      execute "ln -nfs /home/classic/pre-prod/shared/spree/products /home/classic/pre-prod/current/public/spree/products"
+      execute "ln -nfs /home/classic/pre-prod/shared/ckeditor_assets /home/classic/pre-prod/current/public/ckeditor_assets"
+
+      execute"mv ~/pre-prod/current/public/assets/tinymce/langs/fr_FR.js ~/pre-prod/current/public/assets/tinymce/langs/fr.js"
+    end
+  end
+
+  desc "Killing old processes and restarting unicorn"
+  task :restart_unicorn do
+    on roles :all do
+      execute "ps -ef | grep classic | grep '[u]nicorn master' | awk '{print $2}' | xargs kill -9"
+      within "~/pre-prod/current/" do
+        execute "export SECRET_KEY_BASE=$(bundle exec rake secret)"
+      end
+    end
+  end
+end
 
 # server-based syntax
 # ======================
