@@ -43,7 +43,7 @@ namespace :deploy do
   #       execute "export SECRET_KEY_BASE=$(bundle exec rake secret)"
   #     end
   #   end
-  end
+  # end
 end
 
 # server-based syntax
