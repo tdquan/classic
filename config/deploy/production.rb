@@ -34,15 +34,15 @@ namespace :deploy do
     end
   end
 
-  desc "Killing old processes and restarting unicorn"
-  task :restart_unicorn do
-    on roles :all do
-      execute "ps -ef | grep classic | grep '[u]nicorn master' | awk '{print $2}' | xargs kill -9"
-      within "~/pre-prod/current/" do
-        execute "$SHELL"
-        execute "export SECRET_KEY_BASE=$(bundle exec rake secret)"
-      end
-    end
+  # desc "Killing old processes and restarting unicorn"
+  # task :restart_unicorn do
+  #   on roles :all do
+  #     execute "ps -ef | grep classic | grep '[u]nicorn master' | awk '{print $2}' | xargs kill -9"
+  #     within "~/pre-prod/current/" do
+  #       execute "$SHELL"
+  #       execute "export SECRET_KEY_BASE=$(bundle exec rake secret)"
+  #     end
+  #   end
   end
 end
 
