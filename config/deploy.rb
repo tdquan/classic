@@ -17,5 +17,5 @@ set :rbenv_roles, :all # default value
 set :keep_releases, 5
 
 after :deploy, "deploy:create_symlink"
-after :deploy, "deploy:restart_unicorn"
+# after :deploy, "deploy:restart_unicorn"
 after "deploy:restart", "deploy:cleanup"
